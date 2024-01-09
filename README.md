@@ -4,6 +4,8 @@
 
 https://tztechno.github.io/tz_html/
 
+内容をどんどん改変・破壊して行きます。
+
 <br/>
 <br/>
 <br/>
