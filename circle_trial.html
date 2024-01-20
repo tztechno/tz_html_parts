@@ -4,44 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>円を描く</title>
-  
-  /*
-  <style>
-    canvas {border: 1px solid #000;}
-  </style>
- */
-  
 </head>
+  
 <body>
   <!-- 円を描くためのキャンバス -->
   <canvas id="myCanvas" width="800" height="400"></canvas>
 
+  
   <script>
     // キャンバス要素を取得
-    var canvas = document.getElementById('myCanvas');
-    var ctx = canvas.getContext('2d');
+    var ctx = document.getElementById('myCanvas').getContext('2d');
 
     // 円を描く
     function drawCircle() {
       // 円の中心座標
-      var centerX = canvas.width / 2;
-      var centerY = canvas.height / 2;
+      var centerX = 10;
+      var centerY = 30;
 
       // 円の半径
-      var radius = 50;
+      var radius = 80;
 
       // 描画コンテキストを使用して円を描く
       ctx.beginPath();
       ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
       ctx.fillStyle = 'red'; // 円の塗りつぶし色
       ctx.fill(); // 円を塗りつぶす
-      ctx.lineWidth = 2; // 円の線の太さ
+      ctx.lineWidth = 1; // 円の線の太さ
       ctx.strokeStyle = 'black'; // 円の線の色
       ctx.stroke(); // 円の線を描く
     }
 
     // 円を描く関数を呼び出す
     drawCircle();
+    
   </script>
+  
 </body>
 </html>
