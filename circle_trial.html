@@ -13,11 +13,12 @@
   
   <script>
     var ctx = document.getElementById('myCanvas').getContext('2d');
+    var P =[100,300,80]
 
-    function drawCircle() {
-      var centerX = 10;
-      var centerY = 30;
-      var radius = 80;
+    function drawCircle(P) {
+      var centerX = P[0];
+      var centerY = P[1];
+      var radius = P[2];
 
       ctx.beginPath();
       ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
