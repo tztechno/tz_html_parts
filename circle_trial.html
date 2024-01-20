@@ -12,29 +12,20 @@
 
   
   <script>
-    // キャンバス要素を取得
     var ctx = document.getElementById('myCanvas').getContext('2d');
 
-    // 円を描く
     function drawCircle() {
-      // 円の中心座標
       var centerX = 10;
       var centerY = 30;
-
-      // 円の半径
       var radius = 80;
 
-      // 描画コンテキストを使用して円を描く
       ctx.beginPath();
       ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-      ctx.fillStyle = 'red'; // 円の塗りつぶし色
-      ctx.fill(); // 円を塗りつぶす
       ctx.lineWidth = 1; // 円の線の太さ
-      ctx.strokeStyle = 'black'; // 円の線の色
+      ctx.strokeStyle = 'red'; // 円の線の色
       ctx.stroke(); // 円の線を描く
     }
 
-    // 円を描く関数を呼び出す
     drawCircle();
     
   </script>
