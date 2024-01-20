@@ -12,3 +12,4 @@ https://tztechno.github.io/tz_html/circle.html
 
 https://tztechno.github.io/tz_html/graph.html
 
+https://tztechno.github.io/tz_html/vuejs_hello.html
