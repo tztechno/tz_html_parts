@@ -1,0 +1,828 @@
+
+<!doctype html>
+<html data-n-head-ssr lang="ja" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22ja%22%7D%7D">
+  <head >
+    <title>ぐるぐる</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1"><meta data-n-head="ssr" data-hid="description" name="description" content="ぐるぐるはデータ解析者のための、データ分析プラットフォームです。"><meta data-n-head="ssr" data-hid="og:site_name" property="og:site_name" content="ぐるぐる"><meta data-n-head="ssr" data-hid="og:url" property="og:url" content="https://www.guruguru.science"><meta data-n-head="ssr" data-hid="og:title" property="og:title" content="ぐるぐる"><meta data-n-head="ssr" data-hid="og:description" property="og:description" content="ぐるぐるはデータ解析者のための、データ分析プラットフォームです。"><meta data-n-head="ssr" data-hid="og:image" property="og:image" content="/guruguru_icon_reverse.png"><meta data-n-head="ssr" data-hid="twitter:card" property="twitter:card" content="summary_large_image"><meta data-n-head="ssr" data-hid="twitter:title" property="twitter:title" content="ぐるぐる"><meta data-n-head="ssr" data-hid="twitter:description" property="twitter:description" content="ぐるぐるはデータ解析者のための、データ分析プラットフォームです。"><meta data-n-head="ssr" data-hid="mobile-web-app-capable" name="mobile-web-app-capable" content="yes"><meta data-n-head="ssr" data-hid="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="ぐるぐる!"><meta data-n-head="ssr" data-hid="author" name="author" content="nyker510"><meta data-n-head="ssr" data-hid="theme-color" name="theme-color" content="#354955"><meta data-n-head="ssr" data-hid="og:type" name="og:type" property="og:type" content="website"><link data-n-head="ssr" rel="icon" type="image/png" href="/guruguru_icon_reverse.png"><link data-n-head="ssr" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" crossorigin="anonymous"><link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons|Material+Icons+Outlined"><link data-n-head="ssr" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"><link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+1p"><link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho"><link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic"><link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"><link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap"><link data-n-head="ssr" rel="manifest" href="/_nuxt/manifest.de1b65c9.json"><link data-n-head="ssr" rel="shortcut icon" href="/guruguru_icon_reverse.png"><link data-n-head="ssr" rel="apple-touch-icon" href="/guruguru_icon_reverse.png" sizes="400x400"><style data-n-head="ssr" id="vuetify-theme-stylesheet" type="text/css">a { color: #009688; }
+.primary {
+  background-color: #009688 !important;
+  border-color: #009688 !important;
+}
+.primary--text {
+  color: #009688 !important;
+  caret-color: #009688 !important;
+}
+.primary.lighten-5 {
+  background-color: #e0f2f1 !important;
+  border-color: #e0f2f1 !important;
+}
+.primary--text.text--lighten-5 {
+  color: #e0f2f1 !important;
+  caret-color: #e0f2f1 !important;
+}
+.primary.lighten-4 {
+  background-color: #b2dfdb !important;
+  border-color: #b2dfdb !important;
+}
+.primary--text.text--lighten-4 {
+  color: #b2dfdb !important;
+  caret-color: #b2dfdb !important;
+}
+.primary.lighten-3 {
+  background-color: #80cbc4 !important;
+  border-color: #80cbc4 !important;
+}
+.primary--text.text--lighten-3 {
+  color: #80cbc4 !important;
+  caret-color: #80cbc4 !important;
+}
+.primary.lighten-2 {
+  background-color: #4db6ac !important;
+  border-color: #4db6ac !important;
+}
+.primary--text.text--lighten-2 {
+  color: #4db6ac !important;
+  caret-color: #4db6ac !important;
+}
+.primary.lighten-1 {
+  background-color: #26a69a !important;
+  border-color: #26a69a !important;
+}
+.primary--text.text--lighten-1 {
+  color: #26a69a !important;
+  caret-color: #26a69a !important;
+}
+.primary.darken-1 {
+  background-color: #00897b !important;
+  border-color: #00897b !important;
+}
+.primary--text.text--darken-1 {
+  color: #00897b !important;
+  caret-color: #00897b !important;
+}
+.primary.darken-2 {
+  background-color: #00796b !important;
+  border-color: #00796b !important;
+}
+.primary--text.text--darken-2 {
+  color: #00796b !important;
+  caret-color: #00796b !important;
+}
+.primary.darken-3 {
+  background-color: #00695c !important;
+  border-color: #00695c !important;
+}
+.primary--text.text--darken-3 {
+  color: #00695c !important;
+  caret-color: #00695c !important;
+}
+.primary.darken-4 {
+  background-color: #004d40 !important;
+  border-color: #004d40 !important;
+}
+.primary--text.text--darken-4 {
+  color: #004d40 !important;
+  caret-color: #004d40 !important;
+}
+.secondary {
+  background-color: #5e35b1 !important;
+  border-color: #5e35b1 !important;
+}
+.secondary--text {
+  color: #5e35b1 !important;
+  caret-color: #5e35b1 !important;
+}
+.secondary.lighten-5 {
+  background-color: #eeb7ff !important;
+  border-color: #eeb7ff !important;
+}
+.secondary--text.text--lighten-5 {
+  color: #eeb7ff !important;
+  caret-color: #eeb7ff !important;
+}
+.secondary.lighten-4 {
+  background-color: #d19bff !important;
+  border-color: #d19bff !important;
+}
+.secondary--text.text--lighten-4 {
+  color: #d19bff !important;
+  caret-color: #d19bff !important;
+}
+.secondary.lighten-3 {
+  background-color: #b481ff !important;
+  border-color: #b481ff !important;
+}
+.secondary--text.text--lighten-3 {
+  color: #b481ff !important;
+  caret-color: #b481ff !important;
+}
+.secondary.lighten-2 {
+  background-color: #9767ea !important;
+  border-color: #9767ea !important;
+}
+.secondary--text.text--lighten-2 {
+  color: #9767ea !important;
+  caret-color: #9767ea !important;
+}
+.secondary.lighten-1 {
+  background-color: #7a4ecd !important;
+  border-color: #7a4ecd !important;
+}
+.secondary--text.text--lighten-1 {
+  color: #7a4ecd !important;
+  caret-color: #7a4ecd !important;
+}
+.secondary.darken-1 {
+  background-color: #411c96 !important;
+  border-color: #411c96 !important;
+}
+.secondary--text.text--darken-1 {
+  color: #411c96 !important;
+  caret-color: #411c96 !important;
+}
+.secondary.darken-2 {
+  background-color: #20017b !important;
+  border-color: #20017b !important;
+}
+.secondary--text.text--darken-2 {
+  color: #20017b !important;
+  caret-color: #20017b !important;
+}
+.secondary.darken-3 {
+  background-color: #000062 !important;
+  border-color: #000062 !important;
+}
+.secondary--text.text--darken-3 {
+  color: #000062 !important;
+  caret-color: #000062 !important;
+}
+.secondary.darken-4 {
+  background-color: #00004a !important;
+  border-color: #00004a !important;
+}
+.secondary--text.text--darken-4 {
+  color: #00004a !important;
+  caret-color: #00004a !important;
+}
+.accent {
+  background-color: #ffa000 !important;
+  border-color: #ffa000 !important;
+}
+.accent--text {
+  color: #ffa000 !important;
+  caret-color: #ffa000 !important;
+}
+.accent.lighten-5 {
+  background-color: #ffffa4 !important;
+  border-color: #ffffa4 !important;
+}
+.accent--text.text--lighten-5 {
+  color: #ffffa4 !important;
+  caret-color: #ffffa4 !important;
+}
+.accent.lighten-4 {
+  background-color: #ffff87 !important;
+  border-color: #ffff87 !important;
+}
+.accent--text.text--lighten-4 {
+  color: #ffff87 !important;
+  caret-color: #ffff87 !important;
+}
+.accent.lighten-3 {
+  background-color: #fff36b !important;
+  border-color: #fff36b !important;
+}
+.accent--text.text--lighten-3 {
+  color: #fff36b !important;
+  caret-color: #fff36b !important;
+}
+.accent.lighten-2 {
+  background-color: #ffd74e !important;
+  border-color: #ffd74e !important;
+}
+.accent--text.text--lighten-2 {
+  color: #ffd74e !important;
+  caret-color: #ffd74e !important;
+}
+.accent.lighten-1 {
+  background-color: #ffbb30 !important;
+  border-color: #ffbb30 !important;
+}
+.accent--text.text--lighten-1 {
+  color: #ffbb30 !important;
+  caret-color: #ffbb30 !important;
+}
+.accent.darken-1 {
+  background-color: #df8600 !important;
+  border-color: #df8600 !important;
+}
+.accent--text.text--darken-1 {
+  color: #df8600 !important;
+  caret-color: #df8600 !important;
+}
+.accent.darken-2 {
+  background-color: #c06c00 !important;
+  border-color: #c06c00 !important;
+}
+.accent--text.text--darken-2 {
+  color: #c06c00 !important;
+  caret-color: #c06c00 !important;
+}
+.accent.darken-3 {
+  background-color: #a15400 !important;
+  border-color: #a15400 !important;
+}
+.accent--text.text--darken-3 {
+  color: #a15400 !important;
+  caret-color: #a15400 !important;
+}
+.accent.darken-4 {
+  background-color: #843c00 !important;
+  border-color: #843c00 !important;
+}
+.accent--text.text--darken-4 {
+  color: #843c00 !important;
+  caret-color: #843c00 !important;
+}
+.error {
+  background-color: #ff5252 !important;
+  border-color: #ff5252 !important;
+}
+.error--text {
+  color: #ff5252 !important;
+  caret-color: #ff5252 !important;
+}
+.error.lighten-5 {
+  background-color: #ffe4d5 !important;
+  border-color: #ffe4d5 !important;
+}
+.error--text.text--lighten-5 {
+  color: #ffe4d5 !important;
+  caret-color: #ffe4d5 !important;
+}
+.error.lighten-4 {
+  background-color: #ffc6b9 !important;
+  border-color: #ffc6b9 !important;
+}
+.error--text.text--lighten-4 {
+  color: #ffc6b9 !important;
+  caret-color: #ffc6b9 !important;
+}
+.error.lighten-3 {
+  background-color: #ffa99e !important;
+  border-color: #ffa99e !important;
+}
+.error--text.text--lighten-3 {
+  color: #ffa99e !important;
+  caret-color: #ffa99e !important;
+}
+.error.lighten-2 {
+  background-color: #ff8c84 !important;
+  border-color: #ff8c84 !important;
+}
+.error--text.text--lighten-2 {
+  color: #ff8c84 !important;
+  caret-color: #ff8c84 !important;
+}
+.error.lighten-1 {
+  background-color: #ff6f6a !important;
+  border-color: #ff6f6a !important;
+}
+.error--text.text--lighten-1 {
+  color: #ff6f6a !important;
+  caret-color: #ff6f6a !important;
+}
+.error.darken-1 {
+  background-color: #df323b !important;
+  border-color: #df323b !important;
+}
+.error--text.text--darken-1 {
+  color: #df323b !important;
+  caret-color: #df323b !important;
+}
+.error.darken-2 {
+  background-color: #bf0025 !important;
+  border-color: #bf0025 !important;
+}
+.error--text.text--darken-2 {
+  color: #bf0025 !important;
+  caret-color: #bf0025 !important;
+}
+.error.darken-3 {
+  background-color: #9f0010 !important;
+  border-color: #9f0010 !important;
+}
+.error--text.text--darken-3 {
+  color: #9f0010 !important;
+  caret-color: #9f0010 !important;
+}
+.error.darken-4 {
+  background-color: #800000 !important;
+  border-color: #800000 !important;
+}
+.error--text.text--darken-4 {
+  color: #800000 !important;
+  caret-color: #800000 !important;
+}
+.info {
+  background-color: #2196f3 !important;
+  border-color: #2196f3 !important;
+}
+.info--text {
+  color: #2196f3 !important;
+  caret-color: #2196f3 !important;
+}
+.info.lighten-5 {
+  background-color: #d4ffff !important;
+  border-color: #d4ffff !important;
+}
+.info--text.text--lighten-5 {
+  color: #d4ffff !important;
+  caret-color: #d4ffff !important;
+}
+.info.lighten-4 {
+  background-color: #b5ffff !important;
+  border-color: #b5ffff !important;
+}
+.info--text.text--lighten-4 {
+  color: #b5ffff !important;
+  caret-color: #b5ffff !important;
+}
+.info.lighten-3 {
+  background-color: #95e8ff !important;
+  border-color: #95e8ff !important;
+}
+.info--text.text--lighten-3 {
+  color: #95e8ff !important;
+  caret-color: #95e8ff !important;
+}
+.info.lighten-2 {
+  background-color: #75ccff !important;
+  border-color: #75ccff !important;
+}
+.info--text.text--lighten-2 {
+  color: #75ccff !important;
+  caret-color: #75ccff !important;
+}
+.info.lighten-1 {
+  background-color: #51b0ff !important;
+  border-color: #51b0ff !important;
+}
+.info--text.text--lighten-1 {
+  color: #51b0ff !important;
+  caret-color: #51b0ff !important;
+}
+.info.darken-1 {
+  background-color: #007cd6 !important;
+  border-color: #007cd6 !important;
+}
+.info--text.text--darken-1 {
+  color: #007cd6 !important;
+  caret-color: #007cd6 !important;
+}
+.info.darken-2 {
+  background-color: #0064ba !important;
+  border-color: #0064ba !important;
+}
+.info--text.text--darken-2 {
+  color: #0064ba !important;
+  caret-color: #0064ba !important;
+}
+.info.darken-3 {
+  background-color: #004d9f !important;
+  border-color: #004d9f !important;
+}
+.info--text.text--darken-3 {
+  color: #004d9f !important;
+  caret-color: #004d9f !important;
+}
+.info.darken-4 {
+  background-color: #003784 !important;
+  border-color: #003784 !important;
+}
+.info--text.text--darken-4 {
+  color: #003784 !important;
+  caret-color: #003784 !important;
+}
+.success {
+  background-color: #4caf50 !important;
+  border-color: #4caf50 !important;
+}
+.success--text {
+  color: #4caf50 !important;
+  caret-color: #4caf50 !important;
+}
+.success.lighten-5 {
+  background-color: #dcffd6 !important;
+  border-color: #dcffd6 !important;
+}
+.success--text.text--lighten-5 {
+  color: #dcffd6 !important;
+  caret-color: #dcffd6 !important;
+}
+.success.lighten-4 {
+  background-color: #beffba !important;
+  border-color: #beffba !important;
+}
+.success--text.text--lighten-4 {
+  color: #beffba !important;
+  caret-color: #beffba !important;
+}
+.success.lighten-3 {
+  background-color: #a2ff9e !important;
+  border-color: #a2ff9e !important;
+}
+.success--text.text--lighten-3 {
+  color: #a2ff9e !important;
+  caret-color: #a2ff9e !important;
+}
+.success.lighten-2 {
+  background-color: #85e783 !important;
+  border-color: #85e783 !important;
+}
+.success--text.text--lighten-2 {
+  color: #85e783 !important;
+  caret-color: #85e783 !important;
+}
+.success.lighten-1 {
+  background-color: #69cb69 !important;
+  border-color: #69cb69 !important;
+}
+.success--text.text--lighten-1 {
+  color: #69cb69 !important;
+  caret-color: #69cb69 !important;
+}
+.success.darken-1 {
+  background-color: #2d9437 !important;
+  border-color: #2d9437 !important;
+}
+.success--text.text--darken-1 {
+  color: #2d9437 !important;
+  caret-color: #2d9437 !important;
+}
+.success.darken-2 {
+  background-color: #00791e !important;
+  border-color: #00791e !important;
+}
+.success--text.text--darken-2 {
+  color: #00791e !important;
+  caret-color: #00791e !important;
+}
+.success.darken-3 {
+  background-color: #006000 !important;
+  border-color: #006000 !important;
+}
+.success--text.text--darken-3 {
+  color: #006000 !important;
+  caret-color: #006000 !important;
+}
+.success.darken-4 {
+  background-color: #004700 !important;
+  border-color: #004700 !important;
+}
+.success--text.text--darken-4 {
+  color: #004700 !important;
+  caret-color: #004700 !important;
+}
+.warning {
+  background-color: #fb8c00 !important;
+  border-color: #fb8c00 !important;
+}
+.warning--text {
+  color: #fb8c00 !important;
+  caret-color: #fb8c00 !important;
+}
+.warning.lighten-5 {
+  background-color: #ffff9e !important;
+  border-color: #ffff9e !important;
+}
+.warning--text.text--lighten-5 {
+  color: #ffff9e !important;
+  caret-color: #ffff9e !important;
+}
+.warning.lighten-4 {
+  background-color: #fffb82 !important;
+  border-color: #fffb82 !important;
+}
+.warning--text.text--lighten-4 {
+  color: #fffb82 !important;
+  caret-color: #fffb82 !important;
+}
+.warning.lighten-3 {
+  background-color: #ffdf67 !important;
+  border-color: #ffdf67 !important;
+}
+.warning--text.text--lighten-3 {
+  color: #ffdf67 !important;
+  caret-color: #ffdf67 !important;
+}
+.warning.lighten-2 {
+  background-color: #ffc24b !important;
+  border-color: #ffc24b !important;
+}
+.warning--text.text--lighten-2 {
+  color: #ffc24b !important;
+  caret-color: #ffc24b !important;
+}
+.warning.lighten-1 {
+  background-color: #ffa72d !important;
+  border-color: #ffa72d !important;
+}
+.warning--text.text--lighten-1 {
+  color: #ffa72d !important;
+  caret-color: #ffa72d !important;
+}
+.warning.darken-1 {
+  background-color: #db7200 !important;
+  border-color: #db7200 !important;
+}
+.warning--text.text--darken-1 {
+  color: #db7200 !important;
+  caret-color: #db7200 !important;
+}
+.warning.darken-2 {
+  background-color: #bb5900 !important;
+  border-color: #bb5900 !important;
+}
+.warning--text.text--darken-2 {
+  color: #bb5900 !important;
+  caret-color: #bb5900 !important;
+}
+.warning.darken-3 {
+  background-color: #9d4000 !important;
+  border-color: #9d4000 !important;
+}
+.warning--text.text--darken-3 {
+  color: #9d4000 !important;
+  caret-color: #9d4000 !important;
+}
+.warning.darken-4 {
+  background-color: #802700 !important;
+  border-color: #802700 !important;
+}
+.warning--text.text--darken-4 {
+  color: #802700 !important;
+  caret-color: #802700 !important;
+}
+.toolbar {
+  background-color: #006064 !important;
+  border-color: #006064 !important;
+}
+.toolbar--text {
+  color: #006064 !important;
+  caret-color: #006064 !important;
+}
+.toolbar.lighten-5 {
+  background-color: #9ae5e9 !important;
+  border-color: #9ae5e9 !important;
+}
+.toolbar--text.text--lighten-5 {
+  color: #9ae5e9 !important;
+  caret-color: #9ae5e9 !important;
+}
+.toolbar.lighten-4 {
+  background-color: #7fc9cd !important;
+  border-color: #7fc9cd !important;
+}
+.toolbar--text.text--lighten-4 {
+  color: #7fc9cd !important;
+  caret-color: #7fc9cd !important;
+}
+.toolbar.lighten-3 {
+  background-color: #63aeb1 !important;
+  border-color: #63aeb1 !important;
+}
+.toolbar--text.text--lighten-3 {
+  color: #63aeb1 !important;
+  caret-color: #63aeb1 !important;
+}
+.toolbar.lighten-2 {
+  background-color: #489397 !important;
+  border-color: #489397 !important;
+}
+.toolbar--text.text--lighten-2 {
+  color: #489397 !important;
+  caret-color: #489397 !important;
+}
+.toolbar.lighten-1 {
+  background-color: #2b797d !important;
+  border-color: #2b797d !important;
+}
+.toolbar--text.text--lighten-1 {
+  color: #2b797d !important;
+  caret-color: #2b797d !important;
+}
+.toolbar.darken-1 {
+  background-color: #00484c !important;
+  border-color: #00484c !important;
+}
+.toolbar--text.text--darken-1 {
+  color: #00484c !important;
+  caret-color: #00484c !important;
+}
+.toolbar.darken-2 {
+  background-color: #003135 !important;
+  border-color: #003135 !important;
+}
+.toolbar--text.text--darken-2 {
+  color: #003135 !important;
+  caret-color: #003135 !important;
+}
+.toolbar.darken-3 {
+  background-color: #001e20 !important;
+  border-color: #001e20 !important;
+}
+.toolbar--text.text--darken-3 {
+  color: #001e20 !important;
+  caret-color: #001e20 !important;
+}
+.toolbar.darken-4 {
+  background-color: #000509 !important;
+  border-color: #000509 !important;
+}
+.toolbar--text.text--darken-4 {
+  color: #000509 !important;
+  caret-color: #000509 !important;
+}</style><script data-n-head="ssr" src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous" defer></script><script data-n-head="ssr" data-hid="gtm-script">if(!window._gtm_init){window._gtm_init=1;(function(w,n,d,m,e,p){w[d]=(w[d]==1||n[d]=='yes'||n[d]==1||n[m]==1||(w[e]&&w[e][p]&&w[e][p]()))?1:0})(window,navigator,'doNotTrack','msDoNotTrack','external','msTrackingProtectionEnabled');(function(w,d,s,l,x,y){w[x]={};w._gtm_inject=function(i){if(w.doNotTrack||w[x][i])return;w[x][i]=1;w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+'&gtm_preview=env-1&gtm_auth=caQld2JB4_EBMMCcnuG2-g&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);};w[y]('GTM-P52KGLS')})(window,document,'script','dataLayer','_gtm_ids','_gtm_inject')}</script><link rel="preload" href="/_nuxt/08426b4.js" as="script"><link rel="preload" href="/_nuxt/bea76c3.js" as="script"><link rel="preload" href="/_nuxt/css/ae209be.css" as="style"><link rel="preload" href="/_nuxt/02f390b.js" as="script"><link rel="preload" href="/_nuxt/css/642bf43.css" as="style"><link rel="preload" href="/_nuxt/77232c6.js" as="script"><link rel="preload" href="/_nuxt/css/ffaeaa7.css" as="style"><link rel="preload" href="/_nuxt/78fe22c.js" as="script"><link rel="stylesheet" href="/_nuxt/css/ae209be.css"><link rel="stylesheet" href="/_nuxt/css/642bf43.css"><link rel="stylesheet" href="/_nuxt/css/ffaeaa7.css">
+  </head>
+  <body >
+    <noscript data-n-head="ssr" data-hid="gtm-noscript" data-pbody="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P52KGLS&gtm_preview=env-1&gtm_auth=caQld2JB4_EBMMCcnuG2-g&gtm_cookies_win=x" height="0" width="0" style="display:none;visibility:hidden" title="gtm"></iframe></noscript><div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div data-app="true" id="app" class="application white theme--light"><div class="application--wrap"><main class="v-content" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><div class="v-content__wrap"><!----><!----><!----><!----><!----> <div><div class="container page-top-padding pb-0"><h2 class="display-1">
+    Competitions
+  </h2> <!----></div> <!----> <!----> <div><div class="container pb-0"><h3 class="headline grey--text text--darken-3">Closed</h3></div> <div><div class="container grid-list-sm"><div class="layout row wrap"><div class="flex xs12 md6"><a href="/competitions/22" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/d409df607b8040fa92ccfe80ba4cf47f/Competition-Header-Image1900x400_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            atmaCup #16 in collaboration with RECRUIT
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2023/12/08 18:00 〜
+              2023/12/17 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 666</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 5294 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 71 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/23" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/65fe6d9f43bd4ec8a9797c5888b4ac59/04094c1f2a28c48579028e9ee57cf059_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            yukiCup 2023 Autumn x atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2023/11/25 09:50 〜
+              2023/11/25 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 117</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 1249 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 32 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/21" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/3afc45566f9d44e7ba7e9fd86aff5ec0/SK-A-3089_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #15 atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2023/07/14 18:00 〜
+              2023/07/23 18:30</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 661</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 6536 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 79 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/20" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/88f31f0ffedf43eaa85f736d50c11e02/SK-A-3597_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #14 Sansan x atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2022/10/14 18:30 〜
+              2022/10/23 15:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 167</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 2877 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 49 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/19" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/97ce0163ae9141a0aa840f7c0d926e8f/SK-A-2705_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #13 atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2022/02/14 18:30 〜
+              2022/02/18 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 127</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 2781 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 85 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/18" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/d27ce5e4310744f2a18ee1f8420f7707/a8646837-9f22-0141-5716-fee38e53cc91_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #12 Sansan × atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2021/10/15 18:30 〜
+              2021/10/24 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 245</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 3401 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 66 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/17" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/dae7492176ad43c2b22a2c1225f416c9/atmacup11_bg_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #11 [初心者歓迎! / 画像編] atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2021/07/09 18:00 〜
+              2021/07/22 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 614</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 2985 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 79 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/16" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/e41c2c592495488784929910b79f39da/HD_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #10 [初心者歓迎!] atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2021/03/05 18:00 〜
+              2021/03/13 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 525</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 4335 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 79 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/14" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/b6720c95ab1f44c781736ce5dbefa9f3/26bc3e5674abcfe01afd76b7fb489bd4_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #9 atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2021/01/29 18:30 〜
+              2021/02/06 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 268</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 2296 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 41 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/15" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/0f3a1b0d5ab94e97a3a7ded7a0153cc9/SK-A-5039_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            [playground] Coffee Review
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2020/12/29 12:00 〜
+              2021/01/11 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 58</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 354 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 12 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/13" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/104dddb696d74b1196f750d4ca6812d7/6ec24413-4458-4845-4fe3-8171639f26f9_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #8 [初心者向] atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2020/12/04 18:00 〜
+              2020/12/13 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 318</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 4170 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 41 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/12" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/a7aeca0e387f4ecc87e5425b4436286c/0b35e202-3d11-26b0-0cb2-eb97be6085e4_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #7 CA x atmaCup 2nd
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2020/11/15 12:30 〜
+              2020/11/21 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 166</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 2966 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 47 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/11" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #6 Sansan × atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2020/10/19 10:30 〜
+              2020/10/31 13:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 95</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 1355 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 44 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/10" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/bd035932ba8d44448f33d2e1fb91445e/1987_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #5 atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2020/05/29 18:00 〜
+              2020/06/06 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 218</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 4602 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 82 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/9" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/15a40361a037435895d82654e24a97fe/1982_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #4 atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2020/03/01 14:00 〜
+              2020/03/08 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 58</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 1075 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 43 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/8" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/f1b9b96c3f314711b3c366cd8c81609c/two_sister_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #3 CA × atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2020/01/25 10:00 〜
+              2020/01/25 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 85</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 1234 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 21 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/6" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/a10f39bf477840fbbedae647b48e6a51/DP-14274-003_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #2 atmaCup 睡眠からのコンディション予測
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2019/11/23 10:00 〜
+              2019/11/23 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 34</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 843 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 15 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/4" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/0d9347a5582146a4a1faf4f4c9887733/Water_Lily_Pond_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #1 atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6>2019/08/03 10:00 〜
+              2019/08/03 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 32</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 843 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 13 </span></div></div></div> </div></div></div></div></a></div><div class="flex xs12 md6"><a href="/competitions/2" class="text-decoration-none" data-v-4f0c69c6><div class="fill-height hover-scaling-item__container v-card v-card--flat v-card--hover v-sheet theme--dark" style="position:relative;overflow:hidden;border-radius:8px;" data-v-4f0c69c6><div class="competition-card__cover" data-v-4f0c69c6></div> <div class="v-responsive v-image fill-height" style="min-height:300px;" data-v-4f0c69c6><div class="v-responsive__sizer" style="padding-bottom:40%;"></div><div class="v-image__image v-image__image--preload v-image__image--cover" style="background-image:linear-gradient(to bottom, rgba(13, 23, 22, 0.4), rgba(0, 0, 00, .8)), url(&quot;https://storage.guruguru.science/images/Arrival_of_the_Normandy_Train_thumbnail.jpg&quot;);background-position:center center;"></div><div class="v-responsive__content"><div class="layout ma-0 pa-3 column fill-height" data-v-4f0c69c6><div class="flex shrink" data-v-4f0c69c6><span tabindex="0" class="v-chip text-xs-center elevation-4 ma-0 theme--dark grey darken-4 grey--text text--lighten-2" style="min-width:80px;justify-content:center;" data-v-4f0c69c6><span class="v-chip__content"><!----> <div style="z-index:2;">
+    終了
+  </div></span></span></div> <div class="spacer" data-v-4f0c69c6></div> <div class="flex shrink" data-v-4f0c69c6><h3 class="competition-card__title font-weight-light" data-v-4f0c69c6>
+            #0 atmaCup
+          </h3> <!----> <div data-v-4f0c69c6><span data-v-4f0c69c6> 〜
+              2019/05/26 18:00</span> <div class="pt-2" data-v-4f0c69c6><span data-v-4f0c69c6>#チーム 10</span>
+              ・
+              <span data-v-4f0c69c6>#Submissions 114 </span>
+              ・
+              <span data-v-4f0c69c6>#Discussion 9 </span></div></div></div> </div></div></div></div></a></div></div></div></div></div></div> <footer class="v-footer white theme--light" style="height:auto;overflow:hidden;" data-v-6c15275a><div class="container page-footer__container" data-v-6c15275a><div class="layout align-center" data-v-6c15275a><div class="spacer" data-v-6c15275a></div> <a href="/" class="font--cute font-weight-bold black--text nuxt-link-active" style="text-decoration:none;" data-v-6c15275a>ぐるぐる</a> <span class="pl-2" data-v-6c15275a>powered by
+        <a href="https://www.atma.co.jp/" target="_blank" style="text-decoration:none;" data-v-6c15275a>Atma.inc</a></span> <div class="flex shrink" data-v-6c15275a><a href="https://www.facebook.com/atma.inc/" target="_blank" class="mr-0 v-btn v-btn--icon theme--light" data-v-6c15275a><div class="v-btn__content"><i aria-hidden="true" class="v-icon fab fa-facebook theme--light" data-v-6c15275a></i></div></a><a href="https://twitter.com/atma_inc" target="_blank" class="mr-0 v-btn v-btn--icon theme--light" data-v-6c15275a><div class="v-btn__content"><i aria-hidden="true" class="v-icon fab fa-twitter theme--light" data-v-6c15275a></i></div></a></div></div> <div class="layout align-center justify-end" style="gap:8px;" data-v-6c15275a><a href="/privacy-policy" data-v-6c15275a>プライバシーポリシー</a>
+      /
+      <a href="/terms" data-v-6c15275a>利用規約</a></div> <div class="layout align-center justify-end" style="gap:8px;" data-v-6c15275a><div class="text-xs-right" data-v-6c15275a>
+        お問い合わせは
+        <a target="_blank" href="https://forms.gle/ujha4pyN2JqSriYU7" data-v-6c15275a>こちらから</a></div></div></div></footer> <!----></div></main> <!----></div></div></div></div><script>window.__NUXT__=(function(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J){return {layout:"top",data:[{allCompetitions:[{id:22,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2023-12-17T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F50ad39d32c2f4e9e900a7996ea725092\u002FCompetition-Header-Image1900x400.png",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fd409df607b8040fa92ccfe80ba4cf47f\u002FCompetition-Header-Image1900x400_thumbnail.jpg",title:"atmaCup #16 in collaboration with RECRUIT",icon:c,publicDescription:"## atmaCup とは\r\n\r\n[atma 株式会社](https:\u002F\u002Fwww.atma.co.jp\u002F) が主催するオンサイトデータコンペティションです。\r\n\r\nデータコンペティションとは、主催から配布されるデータを分析し、設定された課題に対して予測を作成し、その精度を競うイベントです。atmaCup は実際に集まって分析を行う点、短時間で分析を行わなくてはならない点が特徴のコンペティションです(現在はコロナウイルス感染防止のためオンラインでの開催を主としています)。\r\n\r\n第 16 回の今回は [**株式会社リクルート**](https:\u002F\u002Fwww.recruit.co.jp\u002F)様との共同開催です!! (リクルートのデータ推進室の詳細は[こちら](https:\u002F\u002Fwww.recruit.co.jp\u002Femployment\u002Fmid-career\u002Fdata_lp\u002F)をご覧ください)\r\n\r\n今回、課題設定などに関わっているリクルートのメンバーはこちら ↓\r\n\r\n\u003Ctable\u003E\r\n  \u003Ctr\u003E\r\n   \u003Ctd\u003E名前・略歴\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003EKaggle Rank\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003Eアカウント\r\n   \u003C\u002Ftd\u003E\r\n  \u003C\u002Ftr\u003E\r\n  \u003Ctr\u003E\r\n   \u003Ctd\u003E 中間 康文 \u003Cbr\u003Eリクルート新卒入社3年目。入社後は主にレコメンドシステムの開発・エンハンスに従事。趣味はゲームと釣り。\r\n   \u003Ctd\u003E\r\n   Competitions & Notebooks Grandmaster\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003E\u003Ca href=\"https:\u002F\u002Fwww.kaggle.com\u002Fyasufuminakama\"\u003Ehttps:\u002F\u002Fwww.kaggle.com\u002Fyasufuminakama\u003C\u002Fa\u003E\r\n   \u003C\u002Ftd\u003E\r\n  \u003C\u002Ftr\u003E\r\n  \u003Ctr\u003E\r\n   \u003Ctd\u003E 荒居 秀尚  \u003Cbr\u003E\r\n   \r\n   リクルート新卒入社3年目。入社後は金融プロダクトの開発などに従事。趣味はゲームと美味しいご飯を食べること。\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003ECompetitions & Notebooks Grandmaster\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003E\u003Ca href=\"https:\u002F\u002Fwww.kaggle.com\u002Fhidehisaarai1213\"\u003Ehttps:\u002F\u002Fwww.kaggle.com\u002Fhidehisaarai1213\u003C\u002Fa\u003E\r\n   \u003C\u002Ftd\u003E\r\n  \u003C\u002Ftr\u003E\r\n  \u003Ctr\u003E\r\n   \u003Ctd\u003E羽鳥 冬星\u003Cbr\u003E\r\n   \r\n   筑波大学大学院システム情報工学研究科でファジィクラスタリングの研究に全てを注ぐ。入社後は主にレコメンドシステムの開発・エンハンスに従事。趣味はスマブラとコンピューターの低レイヤー。\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003ECompetitions Master\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003E\u003Ca href=\"https:\u002F\u002Fwww.kaggle.com\u002Ftoseihatori\"\u003Ehttps:\u002F\u002Fwww.kaggle.com\u002Ftoseihatori\u003C\u002Fa\u003E\r\n   \u003C\u002Ftd\u003E\r\n  \u003C\u002Ftr\u003E\r\n  \u003Ctr\u003E\r\n   \u003Ctd\u003E阿内 宏武\u003Cbr\u003E\r\n   \r\n   リクルート新卒入社8年目。現在はHR領域のデータサイエンスグループのマネージャー。趣味はオセロとギターと飲酒。\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003ECompetitions Master\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003E\u003Ca href=\"https:\u002F\u002Fwww.kaggle.com\u002Fkannahashimoto\"\u003Ehttps:\u002F\u002Fwww.kaggle.com\u002Fkannahashimoto\u003C\u002Fa\u003E\r\n   \u003C\u002Ftd\u003E\r\n  \u003C\u002Ftr\u003E\r\n  \u003Ctr\u003E\r\n   \u003Ctd\u003E翁 啓翔\u003Cbr\u003E\r\n   リクルート新卒入社6年目。主にレコメンドシステムの開発・エンハンスに従事。趣味はランニングとテニス。\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003ECompetitions Master\r\n   \u003C\u002Ftd\u003E\r\n   \u003Ctd\u003E\u003Ca href=\"https:\u002F\u002Fwww.kaggle.com\u002Fkeisho\"\u003Ehttps:\u002F\u002Fwww.kaggle.com\u002Fkeisho\u003C\u002Fa\u003E\r\n   \u003C\u002Ftd\u003E\r\n  \u003C\u002Ftr\u003E\r\n\u003C\u002Ftable\u003E\r\n\r\n過去の開催についてはブログ等にまとめています。どういうイベントなのかと興味を持たれた方は是非こちらもご覧ください。\r\n\r\n- [オンサイトデータコンペの魅力: 関わる全員が楽しいコンペ設計のための取り組み](https:\u002F\u002Fspeakerdeck.com\u002Fnyk510\u002Fonsaitodetakonpefalsemei-li-guan-waruquan-yuan-gale-siikonpeshe-ji-falsetamefalsequ-rizu-mi)\r\n    - atmaCup が楽しいコンペティションになるように nyk510 はじめとしたメンバーが取り組んでいる内容についてまとめたスライドです。\r\n- [「Sansan × atmaCup #12」を開催しました ](https:\u002F\u002Fbuildersbox.corp-sansan.com\u002Fentry\u002F2021\u002F12\u002F18\u002F110000)\r\n- [#6 Sansan x atmaCup を開催しました。](https:\u002F\u002Fatma.hatenablog.com\u002Fentry\u002F2020\u002F11\u002F26\u002F183059)\r\n- [CDLE youth×Retali AI「Retail AI Championship」開催のサポートを行いました。](https:\u002F\u002Fwww.guruguru.science\u002Fnews\u002F9\u002F)\r\n\r\n## 日時&場所\r\n\r\n### ★ コンペティション\r\n\r\n開始日時: 2023 年 12 月 8 日（金）開会式 (17:30~)  \r\n終了日時: 2023 年 12 月 17 日（日）閉会式・結果発表 (17:45~)  \r\n場所: オンライン実施\r\n\r\n### ★ 表彰式&振り返り会(懇親会付)\r\n\r\n日時: 2024 年 1 月 20 日（土）  \r\n場所: リクルート本社オフィス(グラントウキョウサウスタワー) 東京都千代田区丸の内 1-9-2 \r\n\r\n\u003E ※入賞者の方をリクルート本社オフィスにご招待する形を想定しています(+その他先着順で参加希望の方を募る可能性もあります)  \r\n\u003E ※その他の方も視聴できるよう、オンライン配信も予定しています(録画したものを後日 YouTube 上で公開する可能性があります)\r\n\r\n## 参加対象者\r\n\r\n- コンペに出たくてたまらない方\r\n- データ分析に関わる仕事をしている方\r\n- 仕事ではないけど楽しくてデータ分析をやっている方\r\n- 実データの分析をやってみたい方\r\n\r\n## 問題設定・評価基準\r\n\r\n問題は開始当日にオープンとなります。\r\n上記課題に基づいて、コンペ用に定めた評価基準に基づいたスコアにより順位が決定されます。\r\n\r\n## 賞金\r\n\r\n今回のコンペではより多くの方に楽しんでいただくため、学生と社会人で分けて賞金を設定しています。  \r\n賞金以外にも入賞された方には特製グッズをお渡しします!!\r\n\r\n\u003E ※「学生」は一度も社会人経験(フルタイムでの就業経験)が無い方とします (例:  一度社会人経験し大学院へ復学された方 → 社会人枠での参加をお願いします)  \r\n\u003E ※チーム参加の場合 1 チーム 3 名まで\u002F入賞された場合、賞金はチームで相談いただき分割となります(チーム組みは Kaggle Rank の制限があります)   \r\n\u003E ※コンペティション期間中に株式会社リクルートおよび atma 株式会社の役員、従業員、派遣社員である人については、本コンペティションへご参加はいただけますが、入賞した場合に賞金の授与はできません\r\n\r\n### ＜総合優勝＞\r\n\r\n60 万円 \r\n\r\n\u003E ※社会人枠もしくは学生枠の1位の方のどちらかが該当 \u002F 計120万円のお渡しとなります\r\n\r\n### ＜社会人枠＞\r\n\r\n- 1 位 60 万円\r\n- 2 位 30 万円\r\n- 3 位 10 万円\r\n- 4-6 位 5 万円\r\n- 7-9 位 3 万円\r\n- 10-15 位 1 万円\r\n\r\n### ＜学生枠＞\r\n\r\n- 1 位 60 万円\r\n- 2 位 30 万円\r\n- 3 位 10 万円\r\n- 4-6 位 5 万円\r\n- 7-9 位 3 万円\r\n- 10-15 位 1 万円\r\n\r\n### ＜ディスカッション＞\r\n\r\nnyk_goto 賞 10 万円  \r\n\r\n\u003E ※discussion(コンペに関する議論が出来る掲示板)での貢献度の高い方を選出させていただきます\r\n\r\n\r\n\r\n## タイムテーブル\r\n\r\n開始日: 2023 年 12 月 8 日（金）\r\n\r\n| 時間          | 内容                                                                                                                                                                      |\r\n| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\r\n| 17:30         | 開会式スタート      \r\n|17:30 ~ 18:00       |     お題の発表・ルール説明                                                                                                                                                \r\n|18:00| コンペ開始                                                                                                                                                                    |\r\n\r\n\u003E 配信URL: https:\u002F\u002Fwww.youtube.com\u002Fwatch?v=QOZ1lTNRt0M\r\n\r\n終了日: 2023 年 12 月 17 日（日）\r\n\r\n| 時間          | 内容                                                                                                                                                                      |\r\n| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\r\n|17:45 ~ 18:00         | 最終発表カウントダウン      \r\n|18:00       |     DEAD LINE (submit受付終了)                                                                                                                                               \r\n|18:00 ~ 18:30| 結果発表・閉会式                                                                                                                                                                    |\r\n\r\n\u003E 配信URL: https:\u002F\u002Fwww.youtube.com\u002Fwatch?v=KciE-UY2ABE\r\n\r\n表彰式&振り返り会: 2024 年 1 月 20 日（土）\r\n\r\n| 時間          | 内容                                                                                                                                                                      |\r\n| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\r\n| 13:15         | 受付開始予定                                                                                                                                                                  |\r\n| 14:00 ~ 16:00 | 表彰式 (オンライン配信もあり) \u003Cbr\u003E・メダル贈呈＋上位入賞者の方の解法プレゼン \u003Cbr\u003E・その他参加者の方の Lightning Talk \u003Cbr\u003E・リクルート事務局 Lightning Talk \u003Cbr\u003E ・質疑応答\u003Cbr\u003E等を予定しています |                                                                                                                                                                    |\r\n| 16:15 ~ 16:45 | オフィスツアー |\r\n| 17:00 ~ 18:00 | 懇親会                                                                                                                                                                    |\r\n\r\n### 初心者向けの講座を開催します\r\n\r\nコンペティション期間中に、弊社データサイエンティストの [@nyk510](https:\u002F\u002Ftwitter.com\u002Fnyker_goto) がオンラインにて、初心者向けの講座を開催予定です。\r\n\r\natmaCup はデータコンペティション初心者の方の参加を歓迎しています! タイタニックはやってみたけれど、普通の Kaggle のコンペはハードルが高いなと思っている方や、データ分析に興味があるけどどうやったらいいかわからない方など、過去にコンペティションに参加されていない方も是非参加ください。\r\n\r\n講座では python を使ったデータ分析のコツや可視化の方法、予測モデルの作成と submission (予測ファイルをシステムに提出すること) までを解説します。データ分析に慣れていない方・Kaggle や分析コンペに興味はあるけれど参加したことがない・どうやって良いのかわからない方も、是非参加してコンペティションを楽しんでいただければと思います。\r\n\r\n@nyk510\r\n\r\n- Kaggle : https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n- twitter : https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 注意事項\r\n\r\n- ご自身の PC をご準備ください。また、事前に予測モデル作成が可能な環境をご用意ください。\r\n\r\n## 個人情報のお取り扱いについて\r\n\r\n本イベントで取得する個人情報のお取り扱い方針は以下の通りです。なお、atma 株式会社は、本イベントの実施に必要な範囲で参加者の個人情報を株式会社リクルートに提供する場合があります。ご同意の上でお申し込み・ご参加ください。\r\n\r\n- atma 株式会社：プライバシーポリシー: [https:\u002F\u002Fwww.guruguru.science\u002Fprivacy-policy](https:\u002F\u002Fwww.guruguru.science\u002Fprivacy-policy)\r\n\r\n\u003E ※なお、入賞された方や表彰式に現地参加いただく方については、株式会社リクルートより表彰式・賞金に関するご連絡や同社の今後の採用情報・イベントに関するご案内のため別途個人情報のご登録フォームをご案内する予定です。株式会社リクルートのプライバシーポリシーは下記をご参照ください。  \r\n[https:\u002F\u002Fcdn.p.recruit.co.jp\u002Fterms\u002Fcmn-t-1001\u002Findex.html](https:\u002F\u002Fcdn.p.recruit.co.jp\u002Fterms\u002Fcmn-t-1001\u002Findex.html)\r\n\r\n## アンチハラスメントポリシー\r\n\r\n本イベントはアンチハラスメントポリシーを定めております。参加者は内容をご確認、ご同意の上でご参加をお願いします。\r\n\r\n本イベントでは、特定の社会的属性――ジェンダー・性自認・性的指向、障がい、外見・身体的特徴、エスニシティ・国籍、年齢、宗教、特定のツールやプログラミング言語、専門とする学問領域、教育的バックグラウンドなど――に基づく差別的言動を、一切許容しません。 加えて、参加者による以下のような行為を、SNS、イベント会場等問わず禁止します。\r\n\r\n- 攻撃的な発言\r\n- 脅迫行為\r\n- ストーキング行為\r\n- つきまとい\r\n- 不適切な接触\r\n- 性的な画像の掲示などを含む不適切な情報の開示\r\n- その他、事務局が不適切と判断した行為\r\n\r\n参加者がこれらの行為に加担した場合、事務局側は当該参加者に対し必要な処分を行うことができます。この処分には、当該参加者への勧告、今後のイベントに聴講者・登壇者として関わることの禁止などを含みます。また、今後のよりよい運営のために、事態の詳細をレポートとして公開する場合があります。 本サービスの中で、「これはハラスメントではないか？」と感じたり、他の誰かがハラスメントを受けていることに気が付いた場合、または事務局側の体制がこれらのポリシーを満たさないと感じることがあった場合には、運営までご連絡ください。\r\n\r\n以上、イベントの健全な運営のため、ご協力をお願いします。\r\n\r\n## 参加にかかる注意事項\r\n\r\n- 参加いただくにあたり、事務局(atma 株式会社\u002F株式会社リクルート)とのコミュニケーションは Slack を使用します(参加される方に URL をお送りします)。そちらでの会話は公開情報として扱い、個別の許可なく外部公開される可能性がありますので、個人情報等の書き込みをされないようよろしくお願いいたします。\r\n- 賞金は、入賞した予測ファイルを再現するコードを提出いただき、かつ内容が確認できたチームに対してお渡しいたします。\r\n- atmaCup において、参加者が作成した成果物(以下、「成果物」という。)については atma・参加者双方の所有物とし、atma からの請求があった場合、参加者は提出する義務を負うものとします。\r\n- 成果物の再現が取れない場合や、参加者の情報に虚偽の内容が発見された場合、および不適切とみなされる行為(今回のデータ元にアクセスできる関係者による不正行為含む)が運営によって認められる場合には、賞金を授与できない場合があります。",startedAt:"2023-12-08T18:00:00+09:00",finishedAt:"2023-12-17T18:00:00+09:00",metrics:"Map@K10",ascending:a,applyingTeams:666,totalDiscussions:71,totalSubmissions:5294,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:k,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:a,maxTotalCost:n,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:a},{id:23,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2023-11-25T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F1cbd2ea23d8d4e16b0bd958e379b30da\u002F04094c1f2a28c48579028e9ee57cf059.png",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F65fe6d9f43bd4ec8a9797c5888b4ac59\u002F04094c1f2a28c48579028e9ee57cf059_thumbnail.jpg",title:"yukiCup 2023 Autumn x atmaCup",icon:c,publicDescription:"## yukiCup とは？\r\n\r\nデータ分析コンペ好きが集まって短期間コンペをみんなで楽しもう！をコンセプトに開催するデータ分析コンペです。  \r\n初心者から上級者まで楽しめるコンペを目指しています。8 時間という短い時間でコンペに取り組み、その日のうちに解法共有までしてしまう、タイムパフォーマンスの良いコンペです。\r\n\r\n** 今回は大人気データ分析コンペ atmaCup とのコラボ開催です！！ **\r\n![yukicupxatma](https:\u002F\u002Fgithub.com\u002Fyuki-a4\u002Fmy_images\u002Fblob\u002Fmain\u002FyukiCup_atma.png?raw=true)\r\n\r\n## スケジュール\r\n\r\n開催日時：2023\u002F11\u002F25 9:30 ～ 19:00\r\n\r\n### タイムテーブル\r\n\r\n| 時間        | 内容              |\r\n| ----------- | ----------------- |\r\n| 9:30-10:00  | 開会式&お題説明   |\r\n| 10:00-18:00 | コンペ            |\r\n| 18:00-19:00 | 表彰式 & 解法共有 |\r\n\r\n## 参加方法\r\n\r\n当日までにアカウント作成し、当日有効になる参加ボタンを押してください。\r\n詳細なアナウンスなどは Discord で行う予定です。connpass ページ上で参加申し込み後表示される Discord への参加をお願いします。https:\u002F\u002Fyukicup.connpass.com\u002Fevent\u002F297049\u002F\r\n\r\n## 優勝賞品\r\n\r\n** だれもが欲しがる ** yukiCup をご用意する予定です。\r\n\r\n## 参加対象者\r\n\r\nデータ分析コンペを初めて見たい人  \r\nデータ分析コンペをこよなく愛する全ての人",startedAt:"2023-11-25T09:50:00+09:00",finishedAt:"2023-11-25T18:00:00+09:00",metrics:"F1 Score",ascending:a,applyingTeams:117,totalDiscussions:u,totalSubmissions:1249,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:k,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:a,maxTotalCost:c,beginnerCost:e,showSocialShareLink:a,userPointScale:l,showStudentLb:b},{id:v,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2023-07-23T08:30:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F49234ddf706e424fb5f2ada9c2275b3c\u002FSK-A-3089.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F3afc45566f9d44e7ba7e9fd86aff5ec0\u002FSK-A-3089_thumbnail.jpg",title:"#15 atmaCup",icon:c,publicDescription:"## atmaCup とは\r\n\r\n[atma 株式会社](https:\u002F\u002Fwww.atma.co.jp\u002F) が主催するオンサイトデータコンペティションです。\r\n\r\nデータコンペティションとは、主催から配布されるデータを分析し、設定された課題に対して予測を作成し、その精度を競うイベントです。atmaCup は実際に集まって分析を行う点、短時間で分析を行わなくてはならない点が特徴のコンペティションです(現在はコロナウイルス感染防止のためオンラインでの開催を主としています)。\r\n\r\n過去の開催についてはブログ等にまとめています。どういうイベントなのかな?と興味を持たれた方は是非こちらもご覧ください。\r\n\r\n- [オンサイトデータコンペの魅力: 関わる全員が楽しいコンペ設計のための取り組み](https:\u002F\u002Fspeakerdeck.com\u002Fnyk510\u002Fonsaitodetakonpefalsemei-li-guan-waruquan-yuan-gale-siikonpeshe-ji-falsetamefalsequ-rizu-mi)\r\n  - atmaCup が楽しいコンペティションになるように nyk510 はじめとしたメンバーが取り組んでいる内容についてまとめたスライドです。\r\n- [「Sansan × atmaCup #12」を開催しました ](https:\u002F\u002Fbuildersbox.corp-sansan.com\u002Fentry\u002F2021\u002F12\u002F18\u002F110000)\r\n- [#6 Sansan x atmaCup を開催しました。](https:\u002F\u002Fatma.hatenablog.com\u002Fentry\u002F2020\u002F11\u002F26\u002F183059)\r\n- [CDLE youth×Retali AI「Retail AI Championship」開催のサポートを行いました。](https:\u002F\u002Fwww.guruguru.science\u002Fnews\u002F9\u002F)\r\n\r\n### 課題について\r\n\r\nアニメ作品のユーザーからの評価結果を予測します! データの詳細はデータタブをご覧ください。\r\n\r\n### 初心者向けの講座を開催します\r\n\r\nこのコンペティションではデータコンペティション初心者のかたの参加を歓迎しています! タイタニックはやってみたけれど、普通の Kaggle のコンペはハードルが高いなと思っている方や、データ分析に興味があるけどどうやったらいいかわからない方など、過去にコンペティションに参加されていない方も是非参加ください。\r\n\r\nコンペティション期間中に、弊社データサイエンティストの [@nyk510](https:\u002F\u002Ftwitter.com\u002Fnyker_goto) がオンラインにて、初学者向けの講座を開催予定です。\r\n\r\n講座では python を使ったデータ分析コツや可視化の方法、予測モデルの作成と submission (予測ファイルをシステムに提出すること) までを解説します。データ分析慣れていない方・Kaggle や分析コンペに興味はあるけれど参加したことがない・どうやって良いのかわからない方も、是非参加してコンペティションを楽しんでいただければと思います。\r\n\r\n(参考 #atmaCup 11 初心者向け講座#1 https:\u002F\u002Fwww.youtube.com\u002Fwatch?v=eRCw0Lm5re8)\r\n\r\n@nyk510\r\n\r\n- Kaggle : https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n- twitter : https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 参加対象者\r\n\r\n- データ分析初心者だけどやってみたい!方\r\n- コンペに出たくてしようがない方\r\n- データ分析に関わる仕事をしている方\r\n- 仕事ではないけど楽しくてやっている方\r\n- 実データの分析をやってみたい方\r\n- ご自身で予測モデルを作れる方\r\n- コンペに出たくてしようがない方\r\n\r\n## 日時・場所\r\n\r\n開催日時は 2023-07-14: 18:00 〜 2023-07-23 18:00 (Asia\u002FTokyo) です。すべてオンラインで行います。\r\n\r\n### note\r\n\r\nconnpass 上の表記は他イベントとの重複参加ができるよう 2023-07-14 のみの日程となっていますがコンペティションの期間は 2023-07-23 までの間です。ご注意ください。\r\n\r\n### タイムライン\r\n\r\n- 07-14(金) 17:30 開会式: https:\u002F\u002Fyoutube.com\u002Flive\u002FOl_kg1ouyB0?feature=share\r\n- 07-14(金) 18:00 コンペティション開始\r\n- 07-15(土) 17:00 第一回初心者向け講座:  https:\u002F\u002Fyoutube.com\u002Flive\u002F61lrElGgDSs?feature=share\r\n- 07-21(金) 20:00 第二回初心者向け講座: https:\u002F\u002Fyoutube.com\u002Flive\u002Fat5LMy-zrMY?feature=share\r\n- 07-23(日) 18:00 コンペ終了・閉会式: https:\u002F\u002Fyoutube.com\u002Flive\u002FpBMsJX1ZPlE?feature=share\r\n\r\n上記はすべてオンライン上で行います。初心者向け講座含めて、配信は youtube-live を想定しています。\r\n振り返って見られるような形で公開しますので、リアルタイムでの参加が難しい場合にはそちらご活用ください。URL は別途 connpass などで共有します。\r\n\r\n## 参加方法\r\n\r\n- コンペティションプラットフォームぐるぐる [https:\u002F\u002Fwww.guruguru.science\u002Fcompetitions\u002F21](https:\u002F\u002Fwww.guruguru.science\u002Fcompetitions\u002F21) 上で参加ボタンをクリックしてください (以前のコンペティションで必要となっていました NDA などは不要です)。開始時間を過ぎますと、参加ボタンを押すことができるようになります。\r\n- connpass 上での参加を押していただくと事前にどのぐらいの人数参加されるかがわかって運営として助かりますので、参加したいよ!という方は connpass 上での参加も是非お願いいたします。事前参加登録をされた方には、前日にリマインダのメールをお送りします。\r\n\r\n## 入賞商品\r\n\r\n優秀者 (PrivateLB 上位の方 + nyk510 賞) には atma 特製の物理メダルをお送りします ;)\r\n\r\n\u003E nyk510 賞とは開催期間中に discussion(コンペに関する議論が出来る掲示板)で最も良いねをもらえたユーザーに贈られる賞です\r\n\r\n## スポンサー\r\n\r\nDataRobotさま\r\n\r\n![DataRobot-Logo-Color-Medium (1).png](https:\u002F\u002Fstorage.guruguru.science\u002Fuploads\u002F8e8c2af3_f762_469c_9832_071c452d53ba\u002FDataRobot-Logo-Color-Medium_1.png)\r\n\r\n## Background\r\n\r\nThe cat at play, Henriëtte Ronner, c. 1860 - c. 1878 \u002F https:\u002F\u002Fwww.rijksmuseum.nl\u002Fen\u002Frijksstudio\u002Fsubjects\u002Fdogs-and-cats\u002Fobjects#\u002FSK-A-3089,2",startedAt:"2023-07-14T18:00:00+09:00",finishedAt:"2023-07-23T18:30:00+09:00",metrics:r,ascending:b,applyingTeams:661,totalDiscussions:s,totalSubmissions:6536,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:k,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:a,maxTotalCost:m,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:20,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2022-10-23T05:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fb81a1e14723e4278810f36e67244bd3d\u002FSK-A-3597.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F88f31f0ffedf43eaa85f736d50c11e02\u002FSK-A-3597_thumbnail.jpg",title:"#14 Sansan x atmaCup",icon:c,publicDescription:"## atmaCup とは\r\n\r\n[atma株式会社](https:\u002F\u002Fwww.atma.co.jp\u002F) が主催するオンサイトデータコンペティションです。\r\n\r\nデータコンペティションとは、主催から配布されるデータを分析し、設定された課題に対して予測を作成し、その精度を競うイベントです。atmaCupは実際に集まって分析を行う点、短時間で分析を行わなくてはならない点が特徴のコンペティションです(現在はコロナウイルス感染防止のためオンラインでの開催を主としています)。\r\n\r\n第14回の今回は [**Sansan株式会社**]( https:\u002F\u002Fjp.corp-sansan.com\u002F )様との三回目の共同開催です!!\r\n今回、課題設定などに関わっている研究開発部の所属メンバー紹介は [**こちら**]( https:\u002F\u002Fsansan-engineering.notion.site\u002F0afd3852e1d84695aff717be048e5062 )\r\n\r\n過去の開催についてはブログ等にまとめています。どういうイベントなのかと興味を持たれた方は是非こちらもご覧ください。\r\n\r\n* [オンサイトデータコンペの魅力: 関わる全員が楽しいコンペ設計のための取り組み](https:\u002F\u002Fspeakerdeck.com\u002Fnyk510\u002Fonsaitodetakonpefalsemei-li-guan-waruquan-yuan-gale-siikonpeshe-ji-falsetamefalsequ-rizu-mi)\r\n    * atmaCupが楽しいコンペティションになるようにnyk510はじめとしたメンバーが取り組んでいる内容についてまとめたスライドです。\r\n* [「Sansan × atmaCup #12」を開催しました ](https:\u002F\u002Fbuildersbox.corp-sansan.com\u002Fentry\u002F2021\u002F12\u002F18\u002F110000)\r\n* [#6 Sansan x atmaCup を開催しました。](https:\u002F\u002Fatma.hatenablog.com\u002Fentry\u002F2020\u002F11\u002F26\u002F183059)\r\n* [CDLE youth×Retali AI「Retail AI Championship」開催のサポートを行いました。](https:\u002F\u002Fwww.guruguru.science\u002Fnews\u002F9\u002F)\r\n\r\n## 日時・場所\r\n\r\n### 日時\r\n\r\n* 開始: 2022\u002F10\u002F14 18:00 (開会式開始時刻です。コンペティション自体は18:30より開始です。)\r\n* 終了: 2022\u002F10\u002F23 15:00\r\n\r\n### 場所\r\n\r\n* 場所 : オンライン開催(最終日はご希望いただける方はSansanの本社オフィスにご来社いただき、オフラインでご参加いただくこともできます）\r\n* ※人数制限を設けますので、ご希望者多数の場合は抽選とさせていただきます。\r\n* ※開催場所：東京都渋谷区神宮前5-52-2 青山オーバルビル 13F\r\n* ※順位発表の模様はオンラインで配信予定です。\r\n* ※オフライン開催に際し、東京都が定める「新型コロナウイルス感染症対策の各種方針」に基づき万全を期して実施いたします。\r\n\r\n## 参加登録について\r\n\r\n今回のコンペに参加される方には GoogleForm にて事前登録をお願いしております。\r\n登録はこちらからお願いします。[Sansan × atmacup #14 応募フォーム](https:\u002F\u002Fforms.gle\u002FZAhygRdTufG1QvYD8)\r\n\r\n\u003E * 受付は10月4日までですのでご注意ください。\r\n\u003E * 今回のコンペでは抽選の上コンペ参加者を決定します、あらかじめご了承ください。抽選スケジュールは下記のとおりです。\r\n\r\n* 応募期間 : 09\u002F14 (水曜日)  〜 10\u002F04 (火曜日)\r\n* 抽選期間 : 10\u002F04 (火曜日)  〜 10\u002F06 (木曜日)\r\n* 当選発表 : 10\u002F07 (金曜日)\r\n    * 当選者には登録いただいたメールアドレス宛に当選のご連絡、参加のための機密保持契約の締結依頼を順次お送りいたします。\r\n\r\n## 参加対象者\r\n\r\n* コンペに出たくてたまらない方\r\n* データ分析に関わる仕事をしている方\r\n* 仕事ではないけど楽しくてやっている方\r\n* 実データの分析をやってみたい方\r\n* ご自身で予測モデルを作れる方\r\n\r\n## 問題設定・評価基準\r\n\r\n問題は開始当日にオープンとなります。\r\n\r\n上記課題に基づいて、コンペ用に定めた評価基準に基づいたスコアにより順位が決定されます。\r\n\r\n## 賞金\r\n\r\n今回のコンペではより多くの方に楽しんで頂く為、学生(＊)と社会人で分けて賞金を設定しています。\u003Cbr\u003E\r\nまたチーム参加時の賞金と、個人参加時の賞金も分けています。\u003Cbr\u003E\r\nチームマージした方々は総合優勝のみが表彰対象になります。\u003Cbr\u003E\r\n個人の方が総合1位となった場合個人部門の賞金(６万円)と総合優勝の賞金(6万円)の両方(計12万円)が授与されます。\u003Cbr\u003E\r\n\r\n＊学生の定義 : 一度も社会人経験が無い方とします。  \u003Cbr\u003E\r\n例) 一度社会人経験し大学院復学された方 → 社会人枠での参加をお願いします。\r\n\r\n賞金総額 26万円 + α !!\r\n\r\n### 総合優勝\r\n\r\n* 1位 6万円\r\n\r\n### 個人(社会人)\r\n\r\n* 1位 6万円\r\n* 2位 3万円\r\n* 3位 1万円\r\n\r\n### 個人(学生)\r\n\r\n* 1位 6万円\r\n* 2位 3万円\r\n* 3位 1万円\r\n\r\n### ディスカッション\r\n\r\n* nyk_goto賞 1万円\r\n\r\n## タイムテーブル\r\n\r\n### 開始日: 10\u002F14 (金曜日)\r\n\r\n| 時間      | 内容                                   |\r\n|--------|---------------------------------|\r\n| 18:00 | 開始                                  |\r\n| 18:00 〜 18:30 | ルール説明・データ配布           |\r\n| 18:30 〜 | コンペ開始  |\r\n\r\n### 最終日: 10\u002F23(日曜日)\r\n\r\n| 時間        | 内容                                   |\r\n|--------|---------------------------------|\r\n| 14:45 〜 15:00 | 最終発表カウントダウン |\r\n| 15:00 | DEAD LINE (submit終了)|\r\n| 15:00 〜 15:45 | 結果発表・表彰 |\r\n\r\n### 初心者向けの講座を開催します\r\n\r\nコンペティション期間中に、弊社データサイエンティストの [@nyk510](https:\u002F\u002Ftwitter.com\u002Fnyker_goto) がオンラインにて、初心者向けの講座を開催予定です。\r\n\r\natmaCup はデータコンペティション初心者の方の参加を歓迎しています! タイタニックはやってみたけれど、普通のKaggleのコンペはハードルが高いなと思っている方や、データ分析に興味があるけどどうやったらいいかわからない方など、過去にコンペティションに参加されていない方も是非参加ください。\r\n\r\n講座では python を使ったデータ分析のコツや可視化の方法、予測モデルの作成と submission (予測ファイルをシステムに提出すること) までを解説します。データ分析に慣れていない方・Kaggleや分析コンペに興味はあるけれど参加したことがない・どうやって良いのかわからない方も、是非参加してコンペティションを楽しんでいただければと思います。\r\n\r\n@nyk510\r\n\r\n* Kaggle : https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n* twitter : https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 注意事項\r\n\r\n* イベント中に写真を撮影させていただくことがあります。\r\n* ご自身のPCをご準備ください。また、事前に予測モデル作成が可能な環境をご用意ください。\r\n* 事前にメールアドレスを登録いただいた方は電子メールにて上記契約書を送付させていただきますので、こちらで指定するサービスにて、電子署名をお願いします。\r\n* データの性質上、競合他社に当たる会社や組織に所属されている方の参加をお断りする場合があります。\r\n\r\n## 個人情報のお取り扱いについて\r\n\r\n本イベントで取得する個人情報のお取り扱い方針は以下の通りです。ご同意の上でお申し込み・ご参加ください。\r\n\r\n* Sansan株式会社：https:\u002F\u002Fjp.corp-sansan.com\u002Fprivacy\r\n* atma株式会社：https:\u002F\u002Fwww.atma.co.jp\u002Fabout\u002F#privacy-policy\r\n\r\n\r\n## アンチハラスメントポリシー\r\n\r\n本イベントはアンチハラスメントポリシーを定めております。参加者は内容をご確認、ご同意の上でご参加をお願いします。\r\n\r\n本イベントでは、特定の社会的属性――ジェンダー・性自認・性的指向、障がい、外見・身体的特徴、エスニシティ・国籍、年齢、宗教、特定のツールやプログラミング言語、専門とする学問領域、教育的バックグラウンドなど――に基づく差別的言動を、一切許容しません。 加えて、参加者による以下のような行為を、SNS、イベント会場等問わず禁止します。\r\n\r\n・攻撃的な発言\r\n・脅迫行為\r\n・ストーキング行為\r\n・つきまとい\r\n・不適切な接触\r\n・性的な画像の掲示などを含む不適切な情報の開示\r\n・その他、事務局が不適切と判断した行為\r\n\r\n参加者がこれらの行為に加担した場合、事務局側は当該参加者に対し必要な処分を行うことができます。この処分には、当該参加者への勧告、今後のイベントに聴講者・登壇者として関わることの禁止などを含みます。また、今後のよりよい運営のために、事態の詳細をレポートとして公開する場合があります。 本サービスの中で、「これはハラスメントではないか？」と感じたり、他の誰かがハラスメントを受けていることに気が付いた場合、または事務局側の体制がこれらのポリシーを満たさないと感じることがあった場合には、以下までご連絡ください。\r\n\r\nmail：shinsotsu-saiyo@sansan.com\r\n\r\n以上、イベントの健全な運営のため、ご協力をお願いします。",startedAt:"2022-10-14T18:30:00+09:00",finishedAt:"2022-10-23T15:00:00+09:00",metrics:p,ascending:a,applyingTeams:167,totalDiscussions:49,totalSubmissions:2877,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:k,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:b,maxTotalCost:m,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:19,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2022-02-18T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F8b156086d2284389b006bc16051bdee1\u002FSK-A-2705.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F97ce0163ae9141a0aa840f7c0d926e8f\u002FSK-A-2705_thumbnail.jpg",title:"#13 atmaCup",icon:c,publicDescription:"## atmaCup とは\r\n\r\n[atma株式会社](https:\u002F\u002Fwww.atma.co.jp\u002F) が主催するオンサイトデータコンペティションです。\r\n\r\nデータコンペティションとは、主催から配布されるデータを分析し、設定された課題に対して予測を作成し、その精度を競うイベントです。atmaCupは実際に集まって分析を行う点、短時間で分析を行わなくてはならない点が特徴のコンペティションです(現在はコロナウイルス感染防止のためオンラインでの開催を主としています)。\r\n\r\n第13回目の開催は #13 atmaCup \u002F CDLE_youth×リテールAI student cup 1st stage としての開催です。\r\n\r\n大会の詳しい内容については、過去の開催に関するレポートなどをご参照ください。\r\n\r\n* [「Sansan × atmaCup #12」を開催しました | Sansan株式会社 内田さん](https:\u002F\u002Fbuildersbox.corp-sansan.com\u002Fentry\u002F2021\u002F12\u002F18\u002F110000)\r\n    * 前回 #12 大会についてまとめて頂いたレポートです。\r\n* [#7 CA x #atmaCup atma社員の参加記録](https:\u002F\u002Fatma.hatenablog.com\u002Fentry\u002F2020\u002F11\u002F27\u002F125148)\r\n* [#6 Sansan x atmaCup を開催しました。](https:\u002F\u002Fatma.hatenablog.com\u002Fentry\u002F2020\u002F11\u002F26\u002F183059)\r\n* [atmaCup#5 開催レポート #atmaCup](https:\u002F\u002Fatma.hatenablog.com\u002Fentry\u002F2020\u002F06\u002F16\u002F184427)\r\n\r\n## リテールAIハッカソン2022 とは\r\n\r\nhttps:\u002F\u002Fwww.jdla.org\u002Fcdle-youth-hackathon\u002F\r\n\r\nG検定\u002FE資格の学生合格者とデータサイエンスに興味のある学生が参加できるハッカソンイベントです。\r\n学生のAIスキルアップの機会創出、学生のスキル実践の場、学生と企業・研究機関とのコミュニケーション機会の提供により、\r\nAI（ディープラーニング）人材のさらなる技術向上及び活躍に貢献することを目的に開催しております。\r\n\r\n今回のハッカソンはG検定\u002FE資格合格者の学生コミュニティ ”CDLE youth”と ”リテールAI研究会”が主催します。\r\n\r\n今年度は1stテージ参加者の結果から30名を選定し、2nd ステージではチーム対抗にてハッカソンを\r\n九州にてリアルイベントとして開催致します。(状況に応じてオンライン開催に変更する場合もございます）\r\n\r\nハッカソンは 2 stage 制となっています。atma Student Cup はその 1 st stage として開催されます。\r\n\r\n* 1st stage: 2月14(月)~18(金)\r\n    * オンラインコンペティション（コンペ及びアイデア上位者がそれぞれ2nd stageに進みます）\r\n* 2nd stage: 3月14(月)~16(水)\r\n    * オフラインハッカソン[@虎乃湯](https:\u002F\u002Fmiyawaka-toranoyu.com\u002F)（旅費はカバーいたします. Microsoft社のアイテムがもらえ、黒毛和牛、ずわいがに等の食べ放題ビュッフェ付きの旅館で開発をいたします:D）\r\n\r\n## 参加対象者\r\n\r\nconnpass ページでの応募を行った段階で、18歳以上の学生であることが条件です (2nd stageへ進む上で、法的な制限の可能性を考慮し18以上を対象としています)。\r\n\r\n文系やコンペ初挑戦の学生の参加も大歓迎です!!\r\n\r\n### 初心者向けの講座を開催します\r\n\r\nコンペティション期間中に、弊社データサイエンティストの [@nyk510](https:\u002F\u002Ftwitter.com\u002Fnyker_goto) がオンラインにて、初学者向けの講座を開催予定です。\r\n\r\natmaCup はデータコンペティション初心者のかたの参加を歓迎しています! タイタニックはやってみたけれど、普通のKaggleのコンペはハードルが高いなと思っている方や、データ分析に興味があるけどどうやったらいいかわからない方など、過去にコンペティションに参加されていない方も是非参加ください。\r\n\r\n講座では python を使ったデータ分析コツや可視化の方法、予測モデルの作成と submission (予測ファイルをシステムに提出すること) までを解説します。データ分析慣れていない方・Kaggleや分析コンペに興味はあるけれど参加したことがない・どうやって良いのかわからない方も、是非参加してコンペティションを楽しんでいただければと思います。\r\n\r\n@nyk510\r\n\r\n* Kaggle : https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n* twitter : https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 問題設定・評価基準\r\n\r\nスマートショッピングカートから収集されている消費者の購買データ（ID-POSデータ等）から購買データの分析及び、購買予測モデルの作成・予測を行っていただきます。\r\n\r\n上記課題に基づいて、コンペ用に定めた評価基準に基づいたスコアにより順位が決定されます。\r\n\r\n## 入賞者特典\r\n\r\nコンペティション、並びにアイディ上位者がそれぞれ 2nd stage への参加権を得ることができます。  \r\nまたコンペティション上位者・アイディア優秀者にはそれぞれ atma 謹製のメダルが贈られます。\r\n\r\n## 場所・日時\r\n\r\n### 場所\r\n\r\n* オンライン\r\n\r\n## タイムテーブル\r\n\r\n* 開始 02\u002F14 18:00\r\n* 終了 02\u002F18 18:00\r\n\r\n\u003E connpass 上の終了日は、重複するイベントへの参加を許可するため開始日と同じ 02\u002F14 終了となっていますが、正しくは 2\u002F18 です。\r\n\r\n### 開始日まで ~ 2\u002F14\r\n\r\n1. connpass上で参加申し込み: ~ 02\u002F07 18:00\r\n    * 秘密保持契約の締結の関係上、開始一週間前を応募締め切りとします。\r\n2. 秘密保持契約の締結\r\n    * 利用するデータの関係上参加される方全員に秘密保持契約 (NDA) の締結をお願いしています。\r\n    * 締結はオンライン上で行なうクラウド型契約サービスを用いる予定です。参加確定されたかたから順に connpass 上で登録されているメールアドレスへ秘密保持契約を行なうためのURLをお送りします。\r\n3. Slackへの招待とコンペサイト「ぐるぐる」上での承認\r\n    * NDA締結確認が済んだ方から順にコンペ運営中連絡を行なうための slack channel へログインするための URL をお送りします。\r\n    * コンペティションは、[コンペプラットフォームぐるぐる](https:\u002F\u002Fwww.guruguru.science\u002F)にて行います。アカウントを作成されていない方は、2で利用したものと同じメールアドレスで、ぐるぐるのユーザーアカウントを作成 https:\u002F\u002Fwww.guruguru.science\u002Fauth\u002Fregister しておいてください。(申込時にアカウントがすでにあり、アンケートにお応え頂いている方は必要ありません)\r\n4. コンペ当日 〜 : コンペ開始!\r\n\r\n### 開始日: 02\u002F14 (月曜日)\r\n\r\n| 時間      | 内容                                   |\r\n|--------|---------------------------------|\r\n| 18:00 | 開始                                  |\r\n| 18:00 〜 18:30 | ルール説明・データ配布           |\r\n| 18:30 〜 | コンペ開始  |\r\n\r\n### 最終日: 02\u002F18 (金曜日)\r\n\r\n| 時間        | 内容                                   |\r\n|--------|---------------------------------|\r\n| 17:45 〜 18:00 | 最終発表カウントダウン |\r\n| 18:00 | DEAD LINE (submit終了)|\r\n| 18:00 〜 18:45 | 結果発表・表彰 |\r\n\r\n## 注意事項\r\n\r\n* イベント中に写真を撮影させていただくことがあります。\r\n* ご自身のPCをご準備ください。また、事前に予測モデル作成が可能な環境をご用意ください。\r\n* 事前にメールアドレスを登録いただいた方は電子メールにて上記契約書を送付させていただきますので、こちらで指定するサービスにて、電子署名をお願いします。",startedAt:"2022-02-14T18:30:00+09:00",finishedAt:"2022-02-18T18:00:00+09:00",metrics:p,ascending:a,applyingTeams:127,totalDiscussions:w,totalSubmissions:2781,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:k,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:b,maxTotalCost:n,beginnerCost:h,showSocialShareLink:a,userPointScale:q,showStudentLb:b},{id:18,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2021-10-24T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F1f8829c26386465cbcb5aa06aad7e25f\u002Fa8646837-9f22-0141-5716-fee38e53cc91.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fd27ce5e4310744f2a18ee1f8420f7707\u002Fa8646837-9f22-0141-5716-fee38e53cc91_thumbnail.jpg",title:"#12 Sansan × atmaCup",icon:c,publicDescription:"## 概要\r\n\r\n第12回の今回は [**Sansan株式会社**]( https:\u002F\u002Fjp.corp-sansan.com\u002F )のデータ統括組織[**DSOC**]( https:\u002F\u002Fsansan-dsoc.com\u002F )様との二回目の共同開催です!!\r\n\r\n過去の開催についてはブログ等にまとめています。どういうイベントなのかな?と興味を持たれた方は是非こちらもご覧ください。\r\n\r\n* [オンサイトデータコンペの魅力: 関わる全員が楽しいコンペ設計のための取り組み](https:\u002F\u002Fspeakerdeck.com\u002Fnyk510\u002Fonsaitodetakonpefalsemei-li-guan-waruquan-yuan-gale-siikonpeshe-ji-falsetamefalsequ-rizu-mi)\r\n    * atmaCupが楽しいコンペティションになるようにnyk510はじめとしたメンバーが取り組んでいる内容についてまとめたスライドです。\r\n* [#7 CA x #atmaCup atma社員の参加記録](https:\u002F\u002Fatma.hatenablog.com\u002Fentry\u002F2020\u002F11\u002F27\u002F125148)\r\n* [#6 Sansan x atmaCup を開催しました。](https:\u002F\u002Fatma.hatenablog.com\u002Fentry\u002F2020\u002F11\u002F26\u002F183059)\r\n* [atmaCup#5 開催レポート #atmaCup](https:\u002F\u002Fatma.hatenablog.com\u002Fentry\u002F2020\u002F06\u002F16\u002F184427)\r\n\r\n## 日時・場所\r\n\r\n### 日時\r\n\r\n* 開始: 2021\u002F10\u002F15 18:30\r\n* 終了: 2021\u002F10\u002F24 18:00\r\n\r\n### 場所\r\n\r\n* オンライン\r\n\r\n## 参加登録について\r\n\r\n今回のコンペに参加される方には GoogleForm にて事前登録をお願いしております。\r\n登録はこちらからお願いします。[Sansan × atmacup 2nd 応募フォーム](https:\u002F\u002Fforms.gle\u002F5Z3x2Kc1yKHc3KoV9)\r\n\r\n\u003E * 受付は10月3日までですのでご注意ください。\r\n\u003E * 今回のコンペでは抽選の上コンペ参加者を決定します、あらかじめご了承ください。抽選スケジュールは下記のとおりです。\r\n\r\n* 応募期間 : 09\u002F17 (金曜日)  〜 10\u002F03 (日曜日)\r\n* 抽選期間 : 10\u002F04 (月曜日)  〜 10\u002F07 (木曜日)\r\n* 当選発表 : 10\u002F08 (金曜日)\r\n    * 当選者には登録いただいたメールアドレス宛に当選のご連絡、参加のための機密保持契約の締結依頼を順次お送りいたします。\r\n\r\n## 参加対象者\r\n\r\n* コンペに出たくてたまらない方\r\n* データ分析に関わる仕事をしている方\r\n* 仕事ではないけど楽しくてやっている方\r\n* 実データの分析をやってみたい方\r\n* ご自身で予測モデルを作れる方\r\n* コンペに出たくてたまらない方\r\n\r\n## 問題設定・評価基準\r\n\r\n気になる問題はひみつです。開始当日にオープンとなります。\r\n\r\n上記課題に基づいて、コンペ用に定めた評価基準に基づいたスコアにより順位が決定されます。\r\n\r\n## 賞金\r\n\r\n今回のコンペではより多くの方に楽しんで頂く為、学生(**)と社会人で分けて賞金を設定しています。またチーム参加時の賞金と、個人参加時の賞金も分けています。チームマージした方々は総合優勝のみが表彰対象になります。\r\n\r\n\u003E *個人の方が総合1位となった場合個人部門の賞金(６万円)と総合優勝の賞金(6万円)の両方(計12万円)が授与されます。\r\n\u003E **学生の定義 : 一度も社会人経験が無い方とします。  \r\n\u003E 例) 一度社会人経験し大学院復学された方 \u002F 社会人枠での参加\r\n\r\n賞金総額 20万円 + α !!\r\n\r\n### 総合優勝\r\n\r\n* 1位 6万円\r\n\r\n### 個人(社会人)\r\n\r\n* 1位 6万円\r\n* 2位 3万円\r\n* 3位 1万円\r\n\r\n### 個人(学生)\r\n\r\n* 1位 6万円\r\n* 2位 3万円\r\n* 3位 1万円\r\n\r\n### ディスカッション\r\n\r\n* nyk_goto賞 1万円\r\n\r\n## タイムテーブル\r\n\r\n### 開始日: 10\u002F15 (金曜日)\r\n\r\n| 時間      | 内容                                   |\r\n|--------|---------------------------------|\r\n| 18:00 | 開始                                  |\r\n| 18:00 〜 18:30 | ルール説明・データ配布           |\r\n| 18:30 〜 | コンペ開始  |\r\n\r\n### 最終日: 10\u002F24 (日曜日)\r\n\r\n| 時間        | 内容                                   |\r\n|--------|---------------------------------|\r\n| 17:45 〜 18:00 | 最終発表カウントダウン |\r\n| 18:00 | DEAD LINE (submit終了)|\r\n| 18:00 〜 18:45 | 結果発表・表彰 |\r\n\r\n### 初心者向けの講座を開催します\r\n\r\nコンペティション期間中に、弊社データサイエンティストの [@nyk510](https:\u002F\u002Ftwitter.com\u002Fnyker_goto) がオンラインにて、初学者向けの講座を開催予定です。\r\n\r\natmaCup はデータコンペティション初心者のかたの参加を歓迎しています! タイタニックはやってみたけれど、普通のKaggleのコンペはハードルが高いなと思っている方や、データ分析に興味があるけどどうやったらいいかわからない方など、過去にコンペティションに参加されていない方も是非参加ください。\r\n\r\n講座では python を使ったデータ分析コツや可視化の方法、予測モデルの作成と submission (予測ファイルをシステムに提出すること) までを解説します。データ分析慣れていない方・Kaggleや分析コンペに興味はあるけれど参加したことがない・どうやって良いのかわからない方も、是非参加してコンペティションを楽しんでいただければと思います。\r\n\r\n@nyk510\r\n\r\n* Kaggle : https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n* twitter : https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 注意事項\r\n\r\n* イベント中に写真を撮影させていただくことがあります。\r\n* ご自身のPCをご準備ください。また、事前に予測モデル作成が可能な環境をご用意ください。\r\n* 事前にメールアドレスを登録いただいた方は電子メールにて上記契約書を送付させていただきますので、こちらで指定するサービスにて、電子署名をお願いします。\r\n* データの性質上、競合他社に当たる会社や組織に所属されている方の参加をお断りする場合があります。\r\n\r\n## Background\r\n\r\nAutumn Maples with Poem Slips: c. 1675 \u002F Artist: Tosa Mitsuoki \u002F Japanese, 1617-1691: https:\u002F\u002Fwww.artic.edu\u002Fartworks\u002F127644\u002Fautumn-maples-with-poem-slips",startedAt:"2021-10-15T18:30:00+09:00",finishedAt:"2021-10-24T18:00:00+09:00",metrics:"Macro F1 Score",ascending:a,applyingTeams:245,totalDiscussions:66,totalSubmissions:3401,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:k,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:b,maxTotalCost:m,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:17,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2021-07-22T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F1c243740442e45d6a1a66e26a36c549f\u002Fatmacup11_bg.png",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fdae7492176ad43c2b22a2c1225f416c9\u002Fatmacup11_bg_thumbnail.jpg",title:"#11 [初心者歓迎! \u002F 画像編] atmaCup",icon:c,publicDescription:"## 課題について\r\n\r\n今回の課題は画像分野からの出題です。詳細なデータやテーマ・評価指標などは当日オープンとなります。\r\n\r\n* オープンデータを利用したコンペになる予定です。(諸事情により差し替えになる可能性もあります)\r\n* データの量もハンドリングしやすい量ですので、マシンパワーがない方でも比較的取り組みやすいと思います。\r\n* 画像データの分析やったことはないけれど、チャレンジしてみようかな! と思っている方の参加をお待ちしております。\r\n\r\n## 初心者向けの講座を開催します\r\n\r\nこのコンペティションではデータコンペティション初心者のかたの参加を歓迎しています! タイタニックはやってみたけれど、普通のKaggleのコンペはハードルが高いなと思っている方や、データ分析に興味があるけどどうやったらいいかわからない方など、過去にコンペティションに参加されていない方も是非参加ください。\r\n\r\nコンペティション期間中に、弊社データサイエンティストの [@nyk510](https:\u002F\u002Ftwitter.com\u002Fnyker_goto) がオンラインにて、初学者向けの講座を開催予定です。\r\n\r\n講座では python を使ったデータ分析コツや可視化の方法、予測モデルの作成と submission (予測ファイルをシステムに提出すること) までを解説します。データ分析慣れていない方・Kaggleや分析コンペに興味はあるけれど参加したことがない・どうやって良いのかわからない方も、是非参加してコンペティションを楽しんでいただければと思います。\r\n\r\n@nyk510\r\n\r\n- Kaggle : https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n- twitter : https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 参加対象者\r\n\r\n* データ分析初心者だけどやってみたい!方\r\n* コンペに出たくてしようがない方\r\n* データ分析に関わる仕事をしている方\r\n* 仕事ではないけど楽しくてやっている方\r\n* 実データの分析をやってみたい方\r\n* ご自身で予測モデルを作れる方\r\n* コンペに出たくてしようがない方\r\n\r\n## 日時・場所\r\n\r\n開催日時は 2021-07-09: 18:00 〜 2021-07-22 18:00 (Asia\u002FTokyo) です。すべてオンラインで行います。\r\n\r\n### タイムライン\r\n\r\n* 07-09 (金) 17:30 〜 18:00 | 開会式・課題発表\r\n  * https:\u002F\u002Fyoutu.be\u002FItKAmEi-EcA\r\n* 07-10 (土) 18:00 〜 19:00 | 初心者向け講座#1\r\n  * https:\u002F\u002Fyoutu.be\u002FeRCw0Lm5re8\r\n* 07-14 (水) 19:00 〜 20:00 | 初心者向け講座#2\r\n  * https:\u002F\u002Fyoutu.be\u002FCy-CzIMBUDM\r\n* 07-22 (木) 17:45 〜 19:00 | 結果発表・閉会式\r\n\r\n上記はすべてオンライン上で行います。配信は youtube-live を想定しています。振り返って見られるような形で公開しますので、リアルタイムでの参加が難しい場合にはそちらご活用ください。URLは別途 connpass などで共有します。\r\n\r\n## 参加方法\r\n\r\nログインした状態で、ぐるぐる上で参加ボタンをクリックしてください (以前のコンペティションで必要となっていましたNDAなどは不要です)。開始時間を過ぎますと、参加ボタンを押すことができるようになります。\r\n\r\n## Prize\r\n\r\nprivate 1st \u002F 2nd \u002F 3rd のチームメンバー皆さんとnyk510賞を獲得したユーザにatma謹製物理メダルをお送りします。\r\n\r\n\u003E nyk510賞とは開催期間中にdiscussion(コンペに関する議論が出来る掲示板)で最も良いねをもらえたユーザーに贈られる賞です\r\n\r\n## ユーザーポイントについて\r\n\r\nこのコンペで得られるコンペティションポイントは 0.5 倍されます。ディスカッションポイントは通常と変わりません。\r\n\r\n## Background\r\n\r\nThe Threatened Swan, Jan Asselijn, c. 1650 \u002F https:\u002F\u002Fwww.rijksmuseum.nl\u002Fen\u002Fcollection\u002FSK-A-4",startedAt:"2021-07-09T18:00:00+09:00",finishedAt:"2021-07-22T18:00:00+09:00",metrics:r,ascending:b,applyingTeams:614,totalDiscussions:s,totalSubmissions:2985,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:k,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:a,maxTotalCost:m,beginnerCost:e,showSocialShareLink:a,userPointScale:q,showStudentLb:b},{id:16,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2021-03-13T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F784a1bed60f0445f8056812b685166f4\u002FHD.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fe41c2c592495488784929910b79f39da\u002FHD_thumbnail.jpg",title:"#10 [初心者歓迎!] atmaCup",icon:c,publicDescription:"## 概要\r\n\r\n今回のコンペティションは[トレノケート株式会社](https:\u002F\u002Fwww.trainocate.co.jp\u002F)様との共同開催です。\r\n\r\nトレノケートについては [**こちら**](https:\u002F\u002Fwww.trainocate.co.jp\u002Fguide\u002Findex.html) （https:\u002F\u002Fwww.trainocate.co.jp\u002Fguide\u002Findex.html）\r\n\r\n\r\n![トレノケート.png](https:\u002F\u002Fstorage.guruguru.science\u002Fuploads\u002F95fcf361_5886_4f95_a083_93c95adf117b\u002F%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2021-02-10_170306.png)\r\n\r\n\r\n### 課題について\r\n\r\n今回の課題はひみつです。詳細なデータやテーマ・評価指標などは当日オープンとなります。\r\n\r\n### 初心者向けの講座を開催します\r\n\r\nこのコンペティションではデータコンペティション初心者のかたの参加を歓迎しています! タイタニックはやってみたけれど、普通のKaggleのコンペはハードルが高いなと思っている方や、データ分析に興味があるけどどうやったらいいかわからない方など、過去にコンペティションに参加されていない方も是非参加ください。\r\n\r\nコンペティション期間中に、弊社データサイエンティストの [@nyk510](https:\u002F\u002Ftwitter.com\u002Fnyker_goto) がオンラインにて、初学者向けの講座を開催予定です。\r\n\r\n講座では python を使ったデータ分析コツや可視化の方法、予測モデルの作成と submission (予測ファイルをシステムに提出すること) までを解説しますので、データ分析慣れていない方・Kaggleや分析に興味はあるけれどどうやって良いのかわからない方も是非参加してコンペティションを楽しんでいただければと思います。\r\n\r\n@nyk510\r\n\r\n- Kaggle : https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n- twitter : https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 日時・場所\r\n\r\n* 開催日時: 2021-03-05 18:00 〜 2021-03-13 18:00 (Asia\u002FTokyo)\r\n* 場所: オンライン開催\r\n\r\n### Timeline\r\n\r\n* 3\u002F5 (金) 17:30 ~ 18:00 | 開会式・課題発表]\r\n  * https:\u002F\u002Fyoutu.be\u002F3UCXeMDaLvk\r\n* 3\u002F6 (土) 18:00 ~ 19:00 | 初心者向け講座#1\r\n  * https:\u002F\u002Fyoutu.be\u002F1pAlK4ERHfQ\r\n* 3\u002F8 (月) 19:00 ~ 20:00 | 初心者向け講座#2\r\n  * https:\u002F\u002Fyoutu.be\u002FkKCJu6i5kIw\r\n* 3\u002F13 (土) 17:45 ~ 19:00 | 結果発表・閉会式\r\n\r\n上記はすべてオンライン上で行います。(youtube-liveを想定しています・URLは別途 connpass などで共有します)\r\n\r\n## 参加方法\r\n\r\n* ログインした状態で、参加ボタンをクリックしてください (以前のコンペティションで必要となっていましたNDAなどは不要です)。コンペティション開始以後、参加ボタンを押すことができるようになります。\r\n\r\n## Prise\r\n\r\n優秀者 (PrivateLB上位の方 + nyk510賞) にはatma特製の物理メダルをお送りします ;)\r\n\r\n\u003E nyk510賞とは開催期間中にdiscussion(コンペに関する議論が出来る掲示板)で最も良いねをもらえたユーザーに贈られる賞です\r\n\r\n## ユーザーポイントについて\r\n\r\nこのコンペで得られるコンペティションポイントは 0.5 倍されます。ディスカッションポイントは通常と変わりません。\r\n\r\n## Background\r\n\r\nWoman and Child at the Well \u002F Camille Pissarro Frenchi, 1830-1903 \u002F https:\u002F\u002Fwww.artic.edu\u002Fartworks\u002F81552\u002Fwoman-and-child-at-the-well",startedAt:"2021-03-05T18:00:00+09:00",finishedAt:"2021-03-13T18:00:00+09:00",metrics:x,ascending:b,applyingTeams:525,totalDiscussions:s,totalSubmissions:4335,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:k,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:a,maxTotalCost:m,beginnerCost:e,showSocialShareLink:a,userPointScale:q,showStudentLb:b},{id:m,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2021-02-06T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fa085d4b365be4a3dba489a62f4c3f5c3\u002F26bc3e5674abcfe01afd76b7fb489bd4.png",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fb6720c95ab1f44c781736ce5dbefa9f3\u002F26bc3e5674abcfe01afd76b7fb489bd4_thumbnail.jpg",title:"#9 atmaCup",icon:c,publicDescription:"## 参加申込方法\r\n\r\nConnpass のコンペティションページ https:\u002F\u002Fatma.connpass.com\u002Fevent\u002F199979\u002F より参加申込をお願いします。\r\n\r\n## お題概要\r\n\r\n今回は株式会社トライアルホールディングスで稼働している **スマートショッピングカート** から取得された、購買データを用いた分析を行っていただきます。詳しいデータやテーマについては当日会場にてお伝えいたします。\r\n\r\n本大会は **[一般社団法人リテールAI研究会](https:\u002F\u002Fretail-ai.or.jp\u002F)** との共同開催になります!\r\n\r\n### スマートショッピングカートとは\r\n\r\n![スマートショッピングカート](https:\u002F\u002Fwww.trial-net.co.jp\u002Fcp\u002Fmediakit_ssc_aicamera\u002Fimg\u002FSS02-01-3.svg)\r\n\r\nトライアルグループが開発した、タブレットとバーコードリーダーを搭載したセルフレジ機能付きの買い物カート。トライアル専用プリペイドカードをスキャンすることでカートが使用できるようになり、お客様は商品のバーコードをスキャンしながらお買い物を進める。\r\n\r\nref:\r\n\r\n* トライアルのスマートショッピングカート、リテールAIカメラ https:\u002F\u002Fwww.trial-net.co.jp\u002Fcp\u002Fmediakit_ssc_aicamera\u002F\r\n* トライアルのAIは“店頭”で進化する https:\u002F\u002Fwww.trial-net.co.jp\u002Fcp\u002Fmediakit_ssc_aicamera\u002Fmessage.html\r\n\r\n### 協賛企業様(敬称略)\r\n\r\n* 株式会社ロッテ\r\n* カルビー株式会社\r\n* キリンビール株式会社\r\n* アサヒ飲料株式会社\r\n* 株式会社日本アクセス\r\n* 株式会社電通\r\n* フクシマガリレイ株式会社\r\n* 日清食品株式会社\r\n* 株式会社トライアルホールディングス\r\n* 株式会社TrueData\r\n* 日本マイクロソフト株式会社 (分析環境提供)\r\n* Ledge AI (メディアスポンサー)\r\n\r\n### 初心者向けサポートを行います\r\n\r\nデータコンペティションに参加したことがない・分析はあまりやったことがない方でもコンペを楽しんでもらえるよう、弊社のデータサイエンティスト @nyk510 が初心者向け講習としてオンラインで動画配信を行ってバックアップする予定です。ぜひチャレンジしてみてください!\r\n\r\n* @nyk510\r\n    * Kaggle | https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n    * twitter | https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 日時\r\n\r\n1\u002F29(金): 18:00 ~ 2\u002F6(土): 18:00\r\n\r\n* 開催日及び終了日には開会式並びに閉会式を行います。\r\n    * 両日ともにオンラインにて参加いただけます。\r\n    * リアルタイムで参加できない方も振り返って閲覧できるように配信します。当日お時間が取れない方でも参加できます。\r\n* 途中 @nyk510 による初心者向け講習を開催いたします。\r\n    * データ分析を始める際に考えること・予測モデルの作成と性能向上のためのTipsなどをお伝えする予定です。\r\n    * 日程は決まり次第 slack にてお送りいたします。\r\n\r\n予定題目(仮)\r\n\r\n1. 分析を行なう時にまずやること & データを眺めてベースラインとなる submission を作る\r\n2. 探索的データ分析: よりデータを細かく見る & モデルの性能改善のための Tips\r\n\r\n## 参加対象者\r\n\r\n* データ分析に関わる仕事をしている方\r\n* 仕事ではないけど楽しくてやっている方\r\n* 実データの分析をやってみたい方\r\n* ご自身で予測モデルを作れる方\r\n* コンペに出たくてしようがない方\r\n\r\n### 参加枠\r\n\r\n1. Azureつかいたい枠 (70)\r\n     1. 運営が用意する Azure 環境を使うことが出来る参加枠です。\r\n2. 通常参加枠 (200)\r\n\r\n## タイムテーブル\r\n\r\n参加までのタイムテーブルは以下のとおりです。\r\n\r\n1. connpass上で参加申し込み\r\n2. 秘密保持契約の締結\r\n    * 利用するデータの関係上参加される方全員に秘密保持契約 (NDA) の締結をお願いしています。\r\n    * 締結はオンライン上で行なうクラウド型契約サービスを用いる予定です。参加確定されたかたから順に connpass 上で登録されているメールアドレスへ秘密保持契約を行なうためのURLをお送りします。\r\n3. Slackへの招待とコンペサイト「ぐるぐる」上での承認\r\n    * NDA締結確認が済んだ方から順にコンペ運営中連絡を行なうための slack channel へログインするための URL をお送りします。\r\n    * コンペティションはぐるぐるにて行います。アカウントを作成されていない方は、`2`で利用したものと同じメールアドレスで、ぐるぐるのユーザーアカウントを作成しておいてください。(申込時にアカウントがすでにあり、アンケートにお応え頂いている方は必要ありません)\r\n4. コンペ当日 〜 : コンペ開始!\r\n\r\n## 評価基準\r\n\r\n本コンペ用に定めた評価基準に基づいたスコアにより順位が決定されます。\r\n\r\n## 賞金\r\n\r\n賞金総額 15万円をご用意しています。\r\n\r\n## 注意事項\r\n\r\n* 基本的に分析環境は参加者様ご自身で用意していただくようにお願いいたします。\r\n    * 前回の atmaCup#4 のように Azure 環境限定ではありません。NDAに締結しない priavte な環境であればご自由にご用意ください。\r\n    * 「Azure使いたい枠!」で参加申込をされた方は運営が Microsoft Azure での分析環境を用意いたします。\r\n* 契約はオンライン上で行います。参加登録いただいた方から順次、参加登録時に記入されたメールアドレスに秘密保持契約締結のためのURLをお送りします。締結いただけない場合参加をお断りさせていただくことになりますので、当日までに締結の方お願いいたします。(もし参加登録から数日たってもメールが送られてこない場合には運営までご連絡ください。)",startedAt:"2021-01-29T18:30:00+09:00",finishedAt:"2021-02-06T18:00:00+09:00",metrics:p,ascending:a,applyingTeams:268,totalDiscussions:y,totalSubmissions:2296,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:o,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:b,maxTotalCost:n,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:t,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2021-01-11T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fceefe652b1644056a689fd34bc8966ea\u002FSK-A-5039.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F0f3a1b0d5ab94e97a3a7ded7a0153cc9\u002FSK-A-5039_thumbnail.jpg",title:"[playground] Coffee Review",icon:c,publicDescription:"## 概要\r\n\r\n皆さん珈琲は好きですか?\r\n\r\n珈琲の味は産地 (標高や地域) 生産者、ドリップの方法などなど様々な要素が複雑に絡み合います。\r\n\r\nこのコンペティションでは与えられた珈琲の属性から、それをドリップしたときの味や匂い、総合得点といった複数の評価値を予測してもらいます。\r\n\r\n\u003E このコンペティションは atmaCup#8 で公開される予定でしたが、直前でゲームレビューの予測に差し替えられてお蔵入りになっていたものです。せっかくなのでコンペとして公開します。\r\n\r\n\u003E データは https:\u002F\u002Fgithub.com\u002Fjldbc\u002Fcoffee-quality-database のものを用いています。\r\n\r\n## NOTE\r\n\r\nこのコンペティションは playground です。ディスカッションは通常のコンペティションと同様にディスカッションランキングに反映されますが、コンペティション ランキングには反映されません。",startedAt:"2020-12-29T12:00:00+09:00",finishedAt:"2021-01-11T18:00:00+09:00",metrics:z,ascending:b,applyingTeams:A,totalDiscussions:B,totalSubmissions:354,published:a,privateRankIsConfirmed:a,upperTeamSize:o,maxSubmissions:C,maxSubmissionIncrementPerMember:k,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:a,maxTotalCost:t,beginnerCost:e,showSocialShareLink:a,userPointScale:l,showStudentLb:b},{id:D,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2020-12-13T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F002b216cf75e4bdaa7135900c49efadd\u002F6ec24413-4458-4845-4fe3-8171639f26f9.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F104dddb696d74b1196f750d4ca6812d7\u002F6ec24413-4458-4845-4fe3-8171639f26f9_thumbnail.jpg",title:"#8 [初心者向] atmaCup",icon:c,publicDescription:"## 概要\r\n\r\nゲームの情報を使って、ゲームの売上を予測します。使えるデータに関しては data sources から閲覧できます。\r\n\r\n## 参加方法\r\n\r\nぐるぐるでアカウントを持っている方であれば誰でも参加することができます。ログインしている状態でされる「コンペに参加する」ボタンを押すことで参加できます。たくさんの方の参加をお待ちしています。\r\n\r\n## Timeline\r\n\r\n* 2020\u002F12\u002F04 18:00 ~ 2020\u002F12\u002F13 18:00 (Asia\u002FTokyo)\r\n* 開催期間中に @nyk510 による初心者向け講座を開催予定です。\r\n  * 2020\u002F12\u002F05: 13:00 ~ 14:00 | データを眺めて submission する https:\u002F\u002Fwww.youtube.com\u002Fwatch?v=LbOPKJu6bFs\r\n  * 2020\u002F12\u002F06: 17:00 ~ 18:00 | より深くデータを見て予測性能を改善する https:\u002F\u002Fwww.youtube.com\u002Fwatch?v=1UP4ccqBtW8&feature=youtu.be\r\n\r\n## Prize\r\n\r\nprivate leaderboard 上位 (通常LB + 敢闘賞LB) のチームに atma 謹製のメダルをお送りします。また開催期間中ディスカッションで最も「いいね」をもらえたユーザーにも nyk510 賞をお送りします。\r\n\r\n(上記入賞については submit に使用したコードの提出、並びに submit の再現が取れると運営が判断した後お送りいたします。内容の再現が取れない等、場合によっては表彰を取りやめる場合がございますこと、ご承知おきくださいませ。)\r\n\r\n## ルール\r\n\r\n### 禁止事項\r\n\r\nチームを組んでいないユーザー同士でのアイディアの交換は禁止とします。自分が行っている取り組みについて SNS 等不特定多数の人間が閲覧可能な場所に投稿することも禁止とします。\r\n\r\n### チームについて\r\n\r\nこのコンペでは参加者どうしでチームを作成することができます (終了の1時間前まで)。チームは「チーム設定」のタブから自分がチームを組みたい相手にリクエストを送り、それを相手が許可することで成立します。\r\n\r\nチームサイズの上限は最大で3人で、この上限を超えるチームは作成できません。またチームにはコスト上限が設定されています。コストはユーザーごとに決まっていてそのユーザーの Kaggle Rank によって決定されます。具体的には以下のとおりです。\r\n\r\n* Grandmaster: 10point\r\n* Master: 7point\r\n* Expert: 4poiint\r\n* Novice. Contributor: 1point\r\n* その他 (未参加): 0point\r\n\r\n今回のコンペでは合計が 14 point を超えるようなチームを作成することはできません。\r\n\r\n#### 例\r\n\r\n* OK: Expert が2人と Novice (合計 9 point \u003C= 14)\r\n* NG: GrandMaster と GrandMaster  (合計 20 point \u003E 14)\r\n\r\n### submission数について\r\n\r\nこのコンペにはチームごとに submission 数の上限が設定されています。上限は 50 です。これを超える submission はできません。またマージ後に 50 を超える様なチームマージも行えません。注意して下さい。\r\n\r\nsubmissionの上限は、チームを組むごとに 10 づつ増加します。例えば3人でチームを組むと 50 + 10 * 2 = 70 回だけ submission 出来るようになります。\r\n\r\n### 外部データの使用について\r\n\r\n外部データの利用は禁止とします。 data sources からダウンロード出来るものだけを使って予測してください。\r\n一般的に用いられている pretrained model の利用はこの限りではありません。\r\n\r\n## Background\r\n\r\nYoung Peasant Having Her Coffee https:\u002F\u002Fwww.artic.edu\u002Fartworks\u002F81548\u002Fyoung-peasant-having-her-coffee",startedAt:"2020-12-04T18:00:00+09:00",finishedAt:"2020-12-13T18:00:00+09:00",metrics:x,ascending:b,applyingTeams:318,totalDiscussions:y,totalSubmissions:4170,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:k,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:a,maxTotalCost:m,beginnerCost:e,showSocialShareLink:a,userPointScale:q,showStudentLb:b},{id:B,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2020-11-21T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Ffdfedd947bb7429f9d8a31235a8a3a7b\u002F0b35e202-3d11-26b0-0cb2-eb97be6085e4.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fa7aeca0e387f4ecc87e5425b4436286c\u002F0b35e202-3d11-26b0-0cb2-eb97be6085e4_thumbnail.jpg",title:"#7 CA x atmaCup 2nd",icon:c,publicDescription:"## コンペティションの課題について\r\n\r\nデータやテーマについては当日開会後、オンラインにてお伝えいたします。\r\nなお、オンラインの配信は参加される方はあとから閲覧可能な形を取らせていただきますので、開会及び問題説明の時間リアルタイムの参加が厳しい場合もご参加いただけます。\r\n\r\n解析に関しては、サイバーエージェント様のデータサイエンティストおよび、弊社のデータサイエンティスト @nyk510 がオンラインでサポートいたします。\r\n\r\n@nyk510: \r\n\r\n- Kaggle https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n- twitter: https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 日時・場所\r\n\r\n開催日時 : 2020年11月15日 12:00 ~ 2020年11月21日 20:00\r\n\r\n## 参加対象者\r\n\r\n- コンペに出たくてしようがない方\r\n- データ分析に関わる仕事をしている方\r\n- 仕事ではないけど楽しくてやっている方\r\n- 実データの分析をやってみたい方\r\n- ご自身で予測モデルを作れる方\r\n- コンペに出たくてしようがない方\r\n\r\n※ 学生の方は[インターン生向けコンペ](https:\u002F\u002Fwww.cyberagent.co.jp\u002Fcareers\u002Fstudents\u002Fevent\u002Fdetail\u002Fid=24429)に参加している可能性があるので原則参加不可とします。参加希望の場合 info@atma.co.jp までご相談ください\r\n\r\n## 課題と評価方法\r\n\r\nデータやテーマについては当日会場にてお伝えいたします。\u003Cbr\u003E\r\n本コンペ用に定めた評価基準に基づいたスコアにより順位が決定されます。\r\n\r\n## 賞金\r\n\r\n* 1位：15万円\r\n* 2位：10万円\r\n* 3位：8万円\r\n* 4位：5万円\r\n* 5位：3万円\r\n* nyk_goto賞：2万円 (discussionで最もいいねを獲得したユーザーに贈られる賞です.)\r\n\r\n## タイムテーブル\r\n\r\n※日程は現時点の草案のため開催日に確定したスケジュールを参加者の方へお伝えする予定です。\r\n\r\n### 初日 11\u002F15(日)\r\n\r\n| 時間      | 内容                                   |\r\n|--------|---------------------------------|\r\n| 12:00       | 開始                                  |\r\n| 12:00 ~ 12:30 | ルール説明・データ配布           |\r\n| 12:30 ~ | コンペ開始  |\r\n\r\n### 最終日 11\u002F21(土)\r\n\r\n| 時間        | 内容                                   |\r\n|--------|---------------------------------|\r\n| 18:00| DEAD LINE (submit終了)|\r\n| 18:30 ~ 19:00|表彰とチームごとに Solution の発表              |\r\n| 19:00 ~ 20:00|懇親会(実施方法検討中)             |\r\n\r\n## 注意事項\r\n- 学生の方は[インターン生向けコンペ](https:\u002F\u002Fwww.cyberagent.co.jp\u002Fcareers\u002Fstudents\u002Fevent\u002Fdetail\u002Fid=24429)に参加している可能性があるので原則参加不可とします。参加希望の場合 info@atma.co.jp までご相談ください\r\n- イベント中にスクリーンショットを撮影させていただくことがあります。\r\n- ご自身のPCをご用意ください。また、事前に予測モデル作成が可能な環境をご用意ください。\r\n- 事前にメールアドレスを登録いただいた方は電子メールにて上記契約書を送付させていただきますので、こちらで指定するサービスにて、電子署名をお願いします。\r\n- データの性質上、競合他社に当たる会社や組織に所属されている方の参加をお断りする場合があります。",startedAt:"2020-11-15T12:30:00+09:00",finishedAt:"2020-11-21T18:00:00+09:00",metrics:E,ascending:a,applyingTeams:166,totalDiscussions:47,totalSubmissions:2966,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:o,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:b,maxTotalCost:m,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:n,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2020-10-31T03:00:00Z",allowAccessToPrivateRank:a,bgImage:c,bgThumbnail:c,title:"#6 Sansan × atmaCup",icon:c,publicDescription:"## 参加登録について\r\n今回のコンペはGoogleFormにて事前登録をお願いしております。\r\n登録はこちらからお願いします。\u003Cbr\u003E\r\n[Sansan × atmacup 応募フォーム](https:\u002F\u002Fforms.gle\u002FNypKXHW42BtcoMTc9)\r\n※受付は10月4日までです。\u003Cbr\u003E\r\nなお今回のコンペでは抽選の上コンペ参加者を決定します。（参加人数は100名程度を予定しております）\u003Cbr\u003E\r\n抽選スケジュールは下記のとおりです。\r\n\r\n* 応募期間 : 09月 18日  ~ 10月 04日 \r\n* 抽選期間 : 10月 05日  ~ 10月 08日 \r\n* 当選発表 : 10月 09日 \r\n\r\n\u003E 当選者には登録いただいたメールアドレス宛に当選のご連絡、参加のための機密保持契約の締結依頼を順次お送りいたします。\r\n\r\n## atmaCupとは\r\n\r\n第6回は [**Sansan株式会社**]( https:\u002F\u002Fjp.corp-sansan.com\u002F )のデータ統括部門[**DSOC**]( https:\u002F\u002Fsansan-dsoc.com\u002F )様との共同開催です！　データコンペティションのテーマではあまり見かけない、ネットワークにまつわる問題となります！　問題についての詳細は、開始当日にオープンとなります。\r\n\r\n## データコンペティションとは\r\n\r\n参加者が会場に集まり、準備されたデータをテーマに沿って分析・予測しその精度を競っていただくイベントです。\r\n開催の様子は https:\u002F\u002Fwww.guruguru.ml\u002F よりご覧いただけます。\r\nデータやテーマについては当日会場にてお伝えいたします。\r\n弊社のデータサイエンティスト @nyk510 がオンラインにて、初学者向けのセッションを大会開催期間中に実施予定です。\r\n初学者の方もぜひご参加ください。\r\n\r\n@nyk510\r\n\r\n  - Kaggle : https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n  - twitter : https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 日時・場所\u003Cbr\u003E\r\n開催日時 : 2020年 10月 19日 10:00 ~\u003Cbr\u003E\r\n場所 : オンライン開催(最終日はLT大会の登壇者様のみオフィスにご来社いただき、オフラインにて実施予定\u003Cbr\u003E\r\n※LT大会開催場所：東京都渋谷区神宮前5-52-2 青山オーバルビル 13F\u003Cbr\u003E\r\n※LT大会の模様はオンラインで配信予定です。\r\n\r\n## 参加対象者\r\n\r\n- データ分析に関わる仕事をしている方\r\n- 仕事ではないけど楽しくてやっている方\r\n- 実データの分析をやってみたい方\r\n- ご自身で予測モデルを作れる方\r\n- コンペに出たくてたまらない方\r\n\r\n## 評価基準\r\n\r\n本コンペ用に定めた評価基準に基づいたスコアにより順位が決定されます。\r\n\r\n## 賞金\r\n\r\n今回のコンペではより多くの方に楽しんで頂く為、学生(＊)と社会人で分けて賞金を設定しています。\u003Cbr\u003E\r\nまたチーム参加時の賞金と、個人参加時の賞金も分けています。\u003Cbr\u003E\r\nチームマージした方々は総合優勝のみが表彰対象になります。\u003Cbr\u003E\r\n個人の方が総合1位となった場合個人部門の賞金(６万円)と総合優勝の賞金(6万円)の両方(計12万円)が授与されます。\u003Cbr\u003E\r\nまた通常のコンペティション上位者への賞金に加え、最終日のオフライン開催時のLT会において優秀な発表をされた方にも賞金を授与します!  \u003Cbr\u003E\r\n＊学生の定義 : 一度も社会人経験が無い方とします。  \u003Cbr\u003E\r\n例)一度社会人経験し大学院復学された方 : 社会人枠での参加\r\n\r\n*LT大会は、パワーポイントの資料を作成いただき、1人5分程度の発表を想定しています。コンペの成績だけでなく、解法で工夫したポイントなどをもとに評価する予定です。詳細は大会当日までに登壇者として当選された方にお伝えします。\r\n\r\n賞金総額 30万円 + α\r\n\r\n### 総合優勝\r\n\r\n* 1位 6万円\r\n\r\n### 個人(社会人)\r\n\r\n* 1位 6万円\r\n* 2位 3万円\r\n* 3位 1万円\r\n\r\n### 個人(学生)\r\n\r\n* 1位 6万円\r\n* 2位 3万円\r\n* 3位 1万円\r\n\r\n### LT大会\r\n\r\n* 社会人枠最優秀LT賞: 2万円\r\n* 学生枠最優秀LT賞: 2万円\r\n### ディスカッション \r\n* nyk_goto賞 1万円\r\n\r\n## タイムテーブル\r\n※日程は現時点の草案のため開催日に確定したスケジュールを参加者の方へお伝えする予定です。\r\n### 初日 10\u002F19(月)\r\n\r\n| 時間      | 内容                                   |\r\n|--------|---------------------------------|\r\n| 10:00       | 開始                                  |\r\n| 10:00 ~ 10:30 | ルール説明・データ配布           |\r\n| 10:30 ~ | コンペ開始  |\r\n\r\n### 最終日 10\u002F31(土)\r\n\r\n| 時間        | 内容                                   |\r\n|--------|---------------------------------|\r\n| 13:00| DEAD LINE (submit終了)|\r\n| 12:30 ~ 13:30|表彰とチームごとに Solution の発表              |\r\n| 14:00 ~ 16:00|LT大会             |\r\n| 16:00 ~ 16:30|LT大会 表彰            |\r\n\r\n## 注意事項\r\n\r\n- イベント中に写真を撮影させていただくことがあります。\r\n- ご自身のPCをご準備ください。また、事前に予測モデル作成が可能な環境をご用意ください。\r\n- 事前にメールアドレスを登録いただいた方は電子メールにて上記契約書を送付させていただきますので、こちらで指定するサービスにて、電子署名をお願いします。\r\n- データの性質上、競合他社に当たる会社や組織に所属されている方の参加をお断りする場合があります。\r\n- Sansanにおいてサマーインターンに参加された方は表彰からは除外させていただきます。",startedAt:"2020-10-19T10:30:00+09:00",finishedAt:"2020-10-31T13:00:00+09:00",metrics:"Top 2 Accuracy Score",ascending:a,applyingTeams:95,totalDiscussions:44,totalSubmissions:1355,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:60,maxSubmissionIncrementPerMember:l,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:b,maxTotalCost:n,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:k,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2020-06-06T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F8326b2959ecd49d1a043d43c755dff19\u002F1987.258_-_Old_Peasant_Lighting_a_Pipe.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fbd035932ba8d44448f33d2e1fb91445e\u002F1987_thumbnail.jpg",title:"#5 atmaCup",icon:c,publicDescription:"## 問題設定\r\n\r\n光学系装置の観測データを元に，その実験の結果を予測する問題です．  \r\n予測対象：2値分類\r\n\r\n### 背景\r\n\r\n物質の発する光にはさまざまな波長の光が含まれています．これを光の波長に対して発光強度をプロットしたものを\"発光スペクトル\"と呼びます． この発光スペクトルを解析することで，物質の素性や発光のメカニズムを明らかにすることができ，発光の特性を調べるためにサイエンスからエンジニアリングまで幅広く用いられる重要なツールとなっています．\r\n\r\n今回の問題では，\"共振器\"と呼ばれる構造によって，発光の特定の波長を強めたり，その発光をコントロールする研究内容を扱います．例えば，光通信などの応用などにおいて，こういった光をうまくコントロールする技術はとても大切です．微細加工技術によって集積化された数万個以上の共振器上には，種類の異なる発光体がランダムに配置されています．その中から，発光が共振器にうまくマッチしたものを，機械学習を使って効率的に探し出すことが今回の問題です．\r\n\r\nこの問題が解決されると，実験サイクルが早くなるのはもちろんのこと，今回の研究内容だけでなく，スペクトル情報の汎用的な分類やその理解に役立つことが予想されます．もしかすると，機械学習によって発光スペクトルに対する新たな物理的な解釈もできるかもしれません．サイエンス・エンジニアリング，両方の視点から意義のある課題になっています．",startedAt:"2020-05-29T18:00:00+09:00",finishedAt:"2020-06-06T18:00:00+09:00",metrics:E,ascending:a,applyingTeams:218,totalDiscussions:82,totalSubmissions:4602,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:o,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:i,isPublic:b,maxTotalCost:n,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:F,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2020-03-08T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F30a6d72e71c64ffeabae2a0efc4eeaf9\u002F1982.272_-_Spring_in_France.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F15a40361a037435895d82654e24a97fe\u002F1982_thumbnail.jpg",title:"#4 atmaCup",icon:c,publicDescription:"## 課題\r\n\r\n購買データをつかい、新規の購買で特定のカテゴリの商品を買うかどうかの確率を予測する問題です。\r\n\r\n\r\n本大会は **[一般社団法人リテールAI研究会様](https:\u002F\u002Fretail-ai.or.jp\u002F)** との共同開催になります!\r\n\r\n### 協賛企業様(敬称略)\r\n\r\n* 株式会社ロッテ\r\n* カルビー株式会社\r\n* キリンビール株式会社\r\n* コカ・コーラカスタマーマーケティング株式会社\r\n* サントリーフーズ株式会社\r\n* 株式会社True Data (データ提供)\r\n* 日本マイクロソフト株式会社 (分析環境提供)\r\n\r\n### 会場提供\r\n\r\n* 株式会社サイバーエージェント\r\n* OCA大阪デザイン&IT専門学校\r\n\r\n## 背景\r\n\r\nスーパーではたくさんの商品が買われています。販売する側としては、商品がどういう条件で売れているかを把握することはとても大事な課題です。例えば以下のようなことにとても興味があります。\r\n\r\n* いつ売れやすいのか\r\n* どこで売れやすいのか\r\n* 同時にどのような商品が買われるのか\r\n\r\nこういうことがわかると…\r\n\r\n* 店舗の配置改善\r\n* 商品開発の戦略\r\n\r\nなどにつなげることができます。\r\n\r\n## ルール\r\n\r\n* このコンペではチームマージを行うことができます。チームの最大数は3です。\r\n* このコンペでは submission 数の上限が設定されています。最大数は50です。日毎の submission の上限はありません。\r\n* submission 数の合計が50を超えるようなチームは作成できませんので、注意してください。\r\n\r\n### References\r\n\r\n背景画像: Spring in FranceDate:\u002F1890\u002FArtist:Robert William Vonnoh, American, 1858–1933\r\nhttps:\u002F\u002Fwww.artic.edu\u002Fartworks\u002F97292\u002Fspring-in-france",startedAt:"2020-03-01T14:00:00+09:00",finishedAt:"2020-03-08T18:00:00+09:00",metrics:"Macro Roc Auc Score",ascending:a,applyingTeams:A,totalDiscussions:43,totalSubmissions:1075,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:j,maxSubmissionIncrementPerMember:l,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:f,isPublic:b,maxTotalCost:c,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:8,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2020-01-25T08:30:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fd17a70666249411ca16d8357bcc7a8d5\u002Ftwo_sister.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Ff1b9b96c3f314711b3c366cd8c81609c\u002Ftwo_sister_thumbnail.jpg",title:"#3 CA × atmaCup",icon:c,publicDescription:"## atmaCupとは\r\n\r\nデータ解析・アルゴリズムソリューション・システム開発を行うベンチャー企業 atma株式会社(https:\u002F\u002Fatma.co.jp) が主催するデータコンペティションです。  \r\n実際に参加者が会場に集まりチームでデータ解析を実施し、得た学びを共有します。\r\n\r\n第3回となる今回は **サイバーエージェント  AI事業本部** (https:\u002F\u002Fcyberagent.ai\u002F) 様との共同開催です!!\r\n\r\n## データコンペティションとは\r\n\r\n参加者が会場に集まり、準備されたデータをテーマに沿って分析・予測しその精度を競っていただくイベントです。  \r\n開催の様子は https:\u002F\u002Fatma-cup.atma.co.jp\u002F よりご覧いただけます。\r\n\r\nデータやテーマについては当日会場にてお伝えいたします。\r\n\r\n会場で実際に顔を合わせて分析をしていきますので、オンラインでのデータコンペとはまた違った面白さを体感していただけると思います! \r\n解析に関しては、サイバーエージェント様のデータサイエンティストおよび、弊社のデータサイエンティスト @nyk510 が両会場バックアップ致します。\r\n\r\n@nyk510: \r\n\r\n- Kaggle https:\u002F\u002Fwww.kaggle.com\u002Fnyk510\r\n- twitter: https:\u002F\u002Ftwitter.com\u002Fnyker_goto\r\n\r\n## 日時・場所\r\n\r\n開催日時 : 2020年1月25日 10:00~   \r\n\r\n* 東京会場 : 株式会社サイバーエージェント渋谷スクランブルスクエア 21F SeminarRoom-C\r\n\r\n（https:\u002F\u002Fwww.shibuya-scramble-square.com\u002Faccess\u002F ）\r\n\r\n* 大阪会場 : AP大阪梅田東　Kルーム\r\n\r\n（https:\u002F\u002Fwww.tc-forum.co.jp\u002Fap-umedahigashi\u002Faccess\u002F ）\r\n\r\n## 参加対象者\r\n\r\n- データ分析に関わる仕事をしている方\r\n- 仕事ではないけど楽しくてやっている方\r\n- 実データの分析をやってみたい方\r\n- ご自身で予測モデルを作れる方\r\n- コンペに出たくてしようがない方\r\n\r\n## 評価基準\r\n\r\n本コンペ用に定めた評価基準に基づいたスコアにより順位が決定されます。\r\n\r\n## 賞金\r\n\r\n1位 15万円\r\n\r\n2位 10万円\r\n\r\n3位 3万円\r\n\r\n\r\nnyk_goto賞 2万円 \r\n\r\n## タイムテーブル\r\n\r\n| 時間        | 内容                                   |\r\n|--------|---------------------------------|\r\n| 9:45~      | 開場・受付開始                                   |\r\n| 10:00       | 開始                                  |\r\n| 10:00~10:30 | ルール説明・データ配布           |\r\n| 10:30~18:00 | 各自作業  |\r\n| 18:00| DEAD LINE (submit終了)|\r\n| 18:00 ~ 19:00|表彰とチームごとに Solution の発表              |\r\n| 19:00 ~ 20:00|懇親会             |\r\n\r\n* 軽食と懇親会の食事をご用意します。\r\n\r\n## 注意事項\r\n\r\n- イベント中に写真を撮影させていただくことがあります。\r\n- ご自身のPCを持参ください。また、事前に予測モデル作成が可能な環境をご用意ください。\r\n- 印鑑を持参ください。 ※データを社外公開しない旨の契約書へ捺印していただきます。\r\n- 事前にメールアドレスを登録いただいた方は電子メールにて上記契約書を送付させていただきますので、こちらで指定するサービスにて、電子署名をお願いします。\r\n- 参加登録の際のアンケートにも記載しておりますが、食事手配を行います。アレルギーがある方は事前にご連絡ください。\r\n- データの性質上、競合他社に当たる会社や組織に所属されている方の参加をお断りする場合があります。",startedAt:"2020-01-25T10:00:00+09:00",finishedAt:"2020-01-25T18:00:00+09:00",metrics:p,ascending:a,applyingTeams:w,totalDiscussions:v,totalSubmissions:1234,published:a,privateRankIsConfirmed:a,upperTeamSize:i,maxSubmissions:C,maxSubmissionIncrementPerMember:l,teamMergeLimit:G,calculateStatus:d,maximumSelectedSubmissions:f,isPublic:b,maxTotalCost:c,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:e,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2019-11-23T08:30:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F9981aebcca594194ba407fdc10e8c2b2\u002FDP-14274-003.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fa10f39bf477840fbbedae647b48e6a51\u002FDP-14274-003_thumbnail.jpg",title:"#2 atmaCup 睡眠からのコンディション予測",icon:c,publicDescription:"## 課題\r\n\r\n睡眠のデータから、その人のコンディションを予測するコンペティションです。\r\n\r\n学習用データとして睡眠の情報とその日の日中のコンディションが紐付いた Training データが与えられます。\r\nそのデータを元に新たな睡眠情報に対してコンディションを予測してもらいます。\r\n\r\nその日のコンディションは `yesterday_status` カラムの値です。この値は `[1, 2, 3]` のいずれかの値をとり数字が小さいほどコンディションが悪いことを表しています。\r\n\r\n使えるデータは以下のようなものです\r\n\r\n* ユーザーの性別\r\n* 何時に寝て何時に起きたか\r\n* アルコールを摂取しているか\r\n* etc…",startedAt:"2019-11-23T10:00:00+09:00",finishedAt:"2019-11-23T18:00:00+09:00",metrics:r,ascending:b,applyingTeams:34,totalDiscussions:t,totalSubmissions:H,published:a,privateRankIsConfirmed:a,upperTeamSize:h,maxSubmissions:c,maxSubmissionIncrementPerMember:l,teamMergeLimit:G,calculateStatus:d,maximumSelectedSubmissions:f,isPublic:a,maxTotalCost:c,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:4,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2019-08-03T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002Fb5d41eed269249de864806599510a285\u002FWater_Lily_Pond.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002F0d9347a5582146a4a1faf4f4c9887733\u002FWater_Lily_Pond_thumbnail.jpg",title:"#1 atmaCup",icon:c,publicDescription:"このコンペはデータの内容に関しては非公開となります。\r\n\r\n## Prize\r\n\r\n* 評価指標で Private Score がもっとも良いチームに賞金を5万円を差し上げます。(評価指標については後述します)\r\n* 上記とは別に Discussion にてもっともいいねを獲得したユーザーにもコンペに対して有益な情報を提供したことを評価して一万円を進呈します。",startedAt:"2019-08-03T10:00:00+09:00",finishedAt:"2019-08-03T18:00:00+09:00",metrics:"Mean Squared Log Error",ascending:b,applyingTeams:u,totalDiscussions:D,totalSubmissions:H,published:a,privateRankIsConfirmed:a,upperTeamSize:o,maxSubmissions:c,maxSubmissionIncrementPerMember:l,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:f,isPublic:b,maxTotalCost:c,beginnerCost:e,showSocialShareLink:a,userPointScale:f,showStudentLb:b},{id:i,isFinished:a,isStarted:a,allowTeamMerge:b,mergeDeadline:"2019-05-26T08:00:00Z",allowAccessToPrivateRank:a,bgImage:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002FArrival_of_the_Normandy_Train.jpg",bgThumbnail:"https:\u002F\u002Fstorage.guruguru.science\u002Fimages\u002FArrival_of_the_Normandy_Train_thumbnail.jpg",title:"#0 atmaCup",icon:c,publicDescription:I,startedAt:c,finishedAt:"2019-05-26T18:00:00+09:00",metrics:z,ascending:b,applyingTeams:k,totalDiscussions:F,totalSubmissions:114,published:a,privateRankIsConfirmed:a,upperTeamSize:o,maxSubmissions:c,maxSubmissionIncrementPerMember:l,teamMergeLimit:g,calculateStatus:d,maximumSelectedSubmissions:f,isPublic:b,maxTotalCost:c,beginnerCost:l,showSocialShareLink:a,userPointScale:f,showStudentLb:b}]}],fetch:{},error:c,state:{isEditting:b,closeDialogMethods:[],competition:c,myTeam:c,doneInitialLoading:b,auth:{jwtToken:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InN0cGV0ZSIsImV4cCI6MTcwOTE5MTI3MywiZW1haWwiOiJzdHBldGVAaS5zb2Z0YmFuay5qcCIsIm9yaWdfaWF0IjoxNzA2NTk5MjczfQ.WjkZ3Z-8_tAS3nMQQUZzEbvrSKRvB-GwkcdyBJuY34Q",profile:{bgImage:c,bgThumbnail:c,avatar:"https:\u002F\u002Fstorage.guruguru.science\u002Faccounts\u002Favatar\u002F239eabb7-15ef-48ad-8bff-faf95b5bddd4.png",bio:c,profileName:J,url:I,location:"Hyogo",kaggleAccount:"stpeteishii",kaggleRank:"contributor",twitterAccount:J}},notify:{messages:[]},rankings:{detailItem:c}},serverRendered:a,routePath:"\u002Fcompetitions",config:{app:{basePath:"\u002F",assetsPath:"\u002F_nuxt\u002F",cdnURL:c}}}}(true,false,null,"success",6,1,"01:00:00",3,2,50,10,0,14,11,5,"Roc Auc Score",.5,"Root Mean Squared Error",79,15,32,21,85,"Root Mean Squared Log Error",41,"Mean Absolute Error",58,12,30,13,"Average Precision Score",9,"00:30:00",843,"","stpete ishii"));</script><script src="/_nuxt/08426b4.js" defer></script><script src="/_nuxt/78fe22c.js" defer></script><script src="/_nuxt/bea76c3.js" defer></script><script src="/_nuxt/02f390b.js" defer></script><script src="/_nuxt/77232c6.js" defer></script>
+  </body>
+</html>
