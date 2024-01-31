@@ -14,6 +14,8 @@ https://tztechno.github.io/tz_html/vuejs_hello.html
 
 https://tztechno.github.io/tz_html/netkeiba.html
 
+https://tztechno.github.io/tz_html/boatrace.html
+
 https://tztechno.github.io/tz_html/residence.html
 
 https://tztechno.github.io/tz_html/youtube.html
