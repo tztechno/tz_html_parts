@@ -22,4 +22,4 @@ https://tztechno.github.io/tz_html/youtube.html
 
 https://tztechno.github.io/tz_html/kaggle.html
 
-https://tztechno.github.io/tz_html/ball_circle.html
+https://tztechno.github.io/tz_html/ball_circle_trial.html
