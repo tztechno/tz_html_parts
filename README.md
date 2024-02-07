@@ -30,6 +30,8 @@ https://tztechno.github.io/tz_html/gaccom.html
 
 https://tztechno.github.io/tz_html/minimal_tag.html
 
+https://tztechno.github.io/tz_html/video.html
+
 ---trial---
 
 https://tztechno.github.io/tz_html/circle_trial.html
