@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map with Pin</title>
+    <!-- Leafletのスクリプトを読み込む -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 地図を表示するための要素 -->
+<div id="map"></div>
+
+<script>
+    // Leafletを使用して地図を作成
+    var map = L.map('map').setView([35.6895, 139.6917], 12); // [緯度, 経度], ズームレベル
+
+    // OpenStreetMapのタイルレイヤーを追加
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // マーカーを追加
+    var marker = L.marker([35.6895, 139.6917]).addTo(map);
+    marker.bindPopup("<b>ピンのタイトル</b>").openPopup();
+</script>
+
+</body>
+</html>
