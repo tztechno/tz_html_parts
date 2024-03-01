@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map with Pin</title>
+    <!-- Google Maps APIのスクリプトを読み込む -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 地図を表示するための要素 -->
+<div id="map"></div>
+
+<script>
+    // Google Maps APIのコールバック関数
+    function initMap() {
+        // 緯度と経度の位置を指定
+        var myLatLng = {lat: 35.6895, lng: 139.6917};
+
+        // 地図を作成
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 12 // ズームレベル
+        });
+
+        // マーカーを作成
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'ピンのタイトル'
+        });
+    }
+</script>
+
+</body>
+</html>
