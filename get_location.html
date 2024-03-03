@@ -1,13 +1,14 @@
-///////////////////////////////
+##########################################################################################
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <script>
+///////////////////////////////    
 function test() {
     navigator.geolocation.getCurrentPosition(test2);
 }
-
+///////////////////////////////
 function test2(position) {
 
     var geo_text = "緯度:" + position.coords.latitude + "\n";
@@ -33,19 +34,21 @@ function test2(position) {
 
 </body>
 </html>
-///////////////////////////////
+
+##########################################################################################
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <script>
+///////////////////////////////    
 var num = 0;
 var watch_id;
-
 function test() {
     watch_id = navigator.geolocation.watchPosition(test2, function(e) { alert(e.message); }, {"enableHighAccuracy": true, "timeout": 20000, "maximumAge": 2000});
 }
-
+///////////////////////////////
 function clear() {
     navigator.geolocation.clearWatch(watch_id);
 }
@@ -79,4 +82,4 @@ function test2(position) {
 
 </body>
 </html>
-///////////////////////////////
+##########################################################################################
