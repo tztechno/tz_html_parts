@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サイドバーの作成</title>
+<style>
+  /* CSSスタイル */
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexboxを使用してレイアウトを調整 */
+  }
+  
+  /* サイドバーのスタイル */
+  .sidebar {
+    width: 200px; /* サイドバーの幅 */
+    background-color: #f4f4f4; /* 背景色 */
+    padding: 20px; /* 内側の余白 */
+  }
+
+  /* メインコンテンツのスタイル */
+  .main-content {
+    flex: 1; /* メインコンテンツが残りのスペースを占めるようにする */
+    padding: 20px; /* 内側の余白 */
+  }
+</style>
+</head>
+<body>
+
+<!-- サイドバー -->
+<div class="sidebar">
+  <h2>Sidebar</h2>
+  <p>サイドバーのコンテンツ</p>
+</div>
+
+<!-- メインコンテンツ -->
+<div class="main-content">
+  <h1>メインコンテンツ</h1>
+  <p>メインコンテンツの内容</p>
+</div>
+
+</body>
+</html>
