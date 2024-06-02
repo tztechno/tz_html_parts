@@ -1,4 +1,5 @@
-# tz_html
+# tz_html_parts
+# Design and UI
 
 
 
@@ -10,3 +11,38 @@
 
  https://tztechno.github.io/tz_html_parts/leafletmap.html
 
+### latest
+
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+
+```
+---
+```
+https://www.jeasyui.com/index.php
+```
+---
