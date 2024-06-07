@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pikaday</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+</head>
+
+<body>
+    <form>
+        <label for="datepicker">Select a date:</label>
+        <input type="text" id="datepicker" name="date">
+    </form>
+    <script>
+        var picker = new Pikaday({ field: document.getElementById('datepicker') });
+    </script>
+</body>
+
+</html>
