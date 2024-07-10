@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Number</title>
+    <script>
+        async function checkNumber() {
+            const number = document.getElementById("number").value;
+            const response = await fetch("/check", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ value: parseInt(number) })
+            });
+            const result = await response.json();
+            document.getElementById("result").innerText = `Lucas Number: ${result.result}, Calculation Time: ${result.duration.toFixed(6)} seconds`;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Lucas Number</h1>
+    <input type="number" id="number" placeholder="Enter a number">
+    <button onclick="checkNumber()">Check</button>
+    <p id="result"></p>
+</body>
+
+</html>

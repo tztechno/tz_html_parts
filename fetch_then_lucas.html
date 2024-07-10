@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lucas Number Calculator</title>
+</head>
+
+<body>
+    <p>AJAX Lucas Number</p>
+    <input type="number" id="inputN" placeholder="Enter a number">
+    <button onclick="sendRequest()">Calculate</button>
+    <div id="result"></div>
+    <div id="time"></div>
+
+    <script>
+        function sendRequest() {
+            const n = document.getElementById('inputN').value;
+            fetch('calculate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ n: parseInt(n) })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('result').innerText = `Lucas Number L${n} = ${data.result}`;
+                    document.getElementById('time').innerText = `Time: ${(data.process_time / 1e9).toFixed(3)} sec`;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('result').innerText = 'An error occurred. Please try again.';
+                    document.getElementById('time').innerText = '';
+                });
+        }
+    </script>
+</body>
+
+</html>
